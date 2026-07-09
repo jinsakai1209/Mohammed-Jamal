@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriDash - Case Study | Mohammed Jamal</title>
+    <meta name="description" content="UX case study for NutriDash - a health-centric food delivery platform with ingredient transparency, AI-powered personalization, and smart meal customization.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+    <!-- Nav -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-mark">MJ<span class="logo-dot">.</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#work">Work</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#tools">Tools</a>
+                <a href="index.html#blog">Blog</a>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
+                    <svg class="ico-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="ico-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="mailto:jamaluiux04@gmail.com" class="nav-cta">Get in Touch</a>
+            </div>
+            <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mob-menu" id="mobMenu">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="mailto:jamaluiux04@gmail.com" class="mob-cta">Get in Touch</a>
+    </div>
+
+    <!-- Case Study Hero -->
+    <section class="cs-hero">
+        <div class="hero-mesh-bg">
+            <div class="mesh-gradient-wrapper">
+                <div class="mesh-blob blob-1"></div>
+                <div class="mesh-blob blob-2"></div>
+                <div class="mesh-blob blob-3"></div>
+                <div class="mesh-blob blob-4"></div>
+                <div class="mesh-blob blob-5"></div>
+            </div>
+            <div class="mesh-overlay"></div>
+        </div>
+        <div class="nd-hero-illust" aria-hidden="true">
+            <svg viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Leaf/herb sprig -->
+                <g class="nd-float-icon" transform="translate(120, 80)">
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    <path d="M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                    <line x1="12" y1="22" x2="12" y2="30" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                </g>
+                <!-- Apple -->
+                <g class="nd-float-icon" transform="translate(1020, 60)">
+                    <path d="M20 12c0 6-4 11-8 11s-8-5-8-11 4-9 8-9 8 3 8 9z" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M12 3c1-2 3-3 5-3" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M10 5c-1-1-3-1-4 0" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                </g>
+                <!-- Water drop -->
+                <g class="nd-float-icon" transform="translate(200, 350)">
+                    <path d="M12 2C12 2 4 12 4 17a8 8 0 0 0 16 0c0-5-8-15-8-15z" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <!-- Carrot -->
+                <g class="nd-float-icon" transform="translate(950, 370)">
+                    <path d="M8 25L18 5" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M18 5c2-1 5 0 6 2" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <path d="M18 5c1-2 0-5-2-6" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                    <line x1="11" y1="19" x2="14" y2="16" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="13" y1="14" x2="16" y2="11" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                </g>
+                <!-- Avocado half -->
+                <g class="nd-float-icon" transform="translate(80, 220)">
+                    <ellipse cx="14" cy="16" rx="10" ry="14" stroke="#2D6A4F" stroke-width="1.5" fill="none"/>
+                    <circle cx="14" cy="18" r="5" stroke="#2D6A4F" stroke-width="1.5" fill="none"/>
+                </g>
+                <!-- Sparkle/star for AI -->
+                <g class="nd-float-icon" transform="translate(1080, 220)">
+                    <path d="M12 2l2 7 7 2-7 2-2 7-2-7-7-2 7-2z" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+                </g>
+                <!-- Heart rate line -->
+                <g class="nd-float-icon" transform="translate(400, 400)">
+                    <polyline points="2,16 8,16 11,8 14,24 17,12 20,16 28,16" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <!-- Plate with fork -->
+                <g class="nd-float-icon" transform="translate(750, 390)">
+                    <circle cx="16" cy="16" r="12" stroke="#2D6A4F" stroke-width="1.5" fill="none"/>
+                    <circle cx="16" cy="16" r="8" stroke="#2D6A4F" stroke-width="1.5" fill="none" opacity="0.5"/>
+                    <line x1="34" y1="4" x2="34" y2="14" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="34" y1="14" x2="34" y2="30" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="30" y1="4" x2="30" y2="10" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="38" y1="4" x2="38" y2="10" stroke="#2D6A4F" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M30 10c0 3 8 3 8 0" stroke="#2D6A4F" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                </g>
+
+            </svg>
+        </div>
+        <div class="wrap">
+            <a href="index.html" class="cs-back rv">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Back to Home
+            </a>
+            <div class="cs-hero-tags rv">
+                <span>Mobile App</span>
+                <span>Concept Project</span>
+                <span>Solo Designer</span>
+            </div>
+            <h1 class="cs-hero-title rv">NutriDash</h1>
+            <p class="cs-hero-subtitle rv">A health-centric food delivery platform putting ingredient transparency, AI-powered personalization, and smart meal customization at the center of every order.</p>
+            <div class="cs-hero-stats rv">
+                <div class="h-stat">
+                    <span class="h-stat-num">30</span>
+                    <span class="h-stat-label">Survey respondents</span>
+                </div>
+                <div class="h-stat">
+                    <span class="h-stat-num">56.7%</span>
+                    <span class="h-stat-label">Rate healthy diet important</span>
+                </div>
+                <div class="h-stat">
+                    <span class="h-stat-num">40%</span>
+                    <span class="h-stat-label">Want AI recommendations</span>
+                </div>
+                <div class="h-stat">
+                    <span class="h-stat-num">6</span>
+                    <span class="h-stat-label">Usability tests conducted</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NutriDash Project Banner -->
+    <section class="nd-banner">
+        <div class="nd-banner-inner rv">
+            <div class="nd-banner-content">
+                <div class="nd-app-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                        <line x1="6" y1="1" x2="6" y2="4" />
+                        <line x1="10" y1="1" x2="10" y2="4" />
+                        <line x1="14" y1="1" x2="14" y2="4" />
+                    </svg>
+                </div>
+                <h2 class="nd-banner-title">NUTRIDASH</h2>
+                <p class="nd-banner-tagline">Eat Smart. Live Better.</p>
+                <div class="nd-banner-accent"></div>
+            </div>
+            <div class="nd-banner-visual">
+                <div class="nd-phone">
+                    <div class="nd-phone-screen">
+                        <div class="nd-screen-header"></div>
+                        
+                        <!-- Card 1 (Active) -->
+                        <div class="nd-screen-card nd-card-green">
+                            <div class="nd-card-dot"></div>
+                            <div class="nd-card-lines">
+                                <div class="nd-line nd-line-w80"></div>
+                                <div class="nd-line nd-line-w60"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="nd-screen-card">
+                            <div class="nd-card-dot"></div>
+                            <div class="nd-card-lines">
+                                <div class="nd-line nd-line-w70"></div>
+                                <div class="nd-line nd-line-w45"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="nd-screen-card">
+                            <div class="nd-card-dot"></div>
+                            <div class="nd-card-lines">
+                                <div class="nd-line nd-line-w50"></div>
+                                <div class="nd-line nd-line-w40"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="nd-screen-nav">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 01 Project Overview -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">01</span>
+                <h2 class="sec-title">Project Overview</h2>
+            </div>
+            <p class="cs-body rv">NutriDash is a health-centric food delivery app concept designed to solve a critical gap in existing platforms - the lack of ingredient transparency, personalized meal recommendations, and intuitive health-focused UX. I owned the entire design process across a 6-day sprint from research to tested prototypes.</p>
+            <div class="cs-meta-grid rv">
+                <div class="cs-meta-card">
+                    <span class="cs-meta-label">Role</span>
+                    <span class="cs-meta-value">Solo UI/UX Designer (End to End)</span>
+                </div>
+                <div class="cs-meta-card">
+                    <span class="cs-meta-label">Timeline</span>
+                    <span class="cs-meta-value">6-Day Design Sprint</span>
+                </div>
+                <div class="cs-meta-card">
+                    <span class="cs-meta-label">Platform</span>
+                    <span class="cs-meta-value">Mobile App (iOS & Android)</span>
+                </div>
+                <div class="cs-meta-card">
+                    <span class="cs-meta-label">Tools</span>
+                    <span class="cs-meta-value">Figma · Notion · Google Forms</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 Problem Statement -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">02</span>
+                <h2 class="sec-title">Problem Statement</h2>
+            </div>
+            <p class="cs-body rv">Health-conscious individuals struggle to find convenient meal delivery options that align with their dietary goals due to a lack of ingredient transparency, personalized recommendations, and intuitive UX. This leads to frustration, uninformed choices, and real health risks.</p>
+            <div class="cs-problems rv">
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                    </div>
+                    <h3>No Ingredient Transparency</h3>
+                    <p>Most food delivery apps don't provide detailed ingredient breakdowns, allergen alerts, or verified sourcing. Users rely on vague labels like "healthy" which mean nothing without context.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+                    </div>
+                    <h3>No Personalized Recommendations</h3>
+                    <p>Apps don't adapt to individual dietary needs - vegan, keto, gluten-free, or allergy-specific. Users must manually filter through hundreds of options every single time.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <h3>Decision Fatigue</h3>
+                    <p>Users spend excessive time researching meals outside the app or avoid food delivery altogether due to uncertainty about what they're actually eating.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <h3>Health Risk for Allergy Sufferers</h3>
+                    <p>Consumers with allergies may unknowingly consume harmful ingredients due to missing or unclear allergen information - a serious safety issue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 User Research -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">03</span>
+                <h2 class="sec-title">User Research</h2>
+            </div>
+            <p class="cs-body rv">I conducted a Google Form survey with 30 respondents to validate the problem space with real data. Every number below came from actual responses - not assumptions.</p>
+
+            <div class="cs-meta-grid rv" style="margin-bottom: 36px;">
+                <div class="cs-meta-card" style="text-align: center;">
+                    <span class="cs-meta-label">Very Important (5/5)</span>
+                    <span class="cs-meta-value" style="font-size: 1.5rem; color: var(--gradient-1);">56.7%</span>
+                </div>
+                <div class="cs-meta-card" style="text-align: center;">
+                    <span class="cs-meta-label">Important (4/5)</span>
+                    <span class="cs-meta-value" style="font-size: 1.5rem; color: var(--gradient-1);">16.7%</span>
+                </div>
+                <div class="cs-meta-card" style="text-align: center;">
+                    <span class="cs-meta-label">Want AI Meals</span>
+                    <span class="cs-meta-value" style="font-size: 1.5rem; color: var(--gradient-1);">40%</span>
+                </div>
+                <div class="cs-meta-card" style="text-align: center;">
+                    <span class="cs-meta-label">Unsure on AI</span>
+                    <span class="cs-meta-value" style="font-size: 1.5rem; color: var(--gradient-1);">50%</span>
+                </div>
+            </div>
+
+            <div class="nd-donut-wrap rv">
+                <div class="nd-donut-chart">
+                    <svg viewBox="0 0 200 200" width="200" height="200">
+                        <!-- Base Background Track -->
+                        <circle cx="100" cy="100" r="70" fill="none" stroke="#E5E7EB" stroke-width="28"/>
+                        <!-- Yes 40% = 175.9 / 439.8, starts at top (offset 0) -->
+                        <circle cx="100" cy="100" r="70" fill="none" stroke="#2D6A4F" stroke-width="28"
+                            stroke-dasharray="175.9 439.8" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+                        <!-- Maybe 50% = 219.9 / 439.8, starts at 40% (offset -175.9) -->
+                        <circle cx="100" cy="100" r="70" fill="none" stroke="#F59E0B" stroke-width="28"
+                            stroke-dasharray="219.9 439.8" stroke-dashoffset="-175.9" transform="rotate(-90 100 100)"/>
+                        <!-- No 10% = 44.0 / 439.8, starts at 90% (offset -395.8) -->
+                        <circle cx="100" cy="100" r="70" fill="none" stroke="#9CA3AF" stroke-width="28"
+                            stroke-dasharray="44.0 439.8" stroke-dashoffset="-395.8" transform="rotate(-90 100 100)"/>
+
+                        <!-- Labels with connecting lines -->
+                        <!-- Yes label (top right) -->
+                        <line x1="135" y1="52" x2="160" y2="40" stroke="var(--fg-3)" stroke-width="0.8"/>
+                        <text x="164" y="38" class="nd-donut-pct" fill="#2D6A4F" font-size="11" font-weight="700" text-anchor="start">40%</text>
+                        <text x="164" y="50" class="nd-donut-label" font-size="9" fill="var(--fg-2)" text-anchor="start">Yes</text>
+
+                        <!-- Maybe label (bottom left) -->
+                        <line x1="55" y1="135" x2="30" y2="148" stroke="var(--fg-3)" stroke-width="0.8"/>
+                        <text x="26" y="146" class="nd-donut-pct" fill="#F59E0B" font-size="11" font-weight="700" text-anchor="end">50%</text>
+                        <text x="26" y="158" class="nd-donut-label" font-size="9" fill="var(--fg-2)" text-anchor="end">Maybe</text>
+
+                        <!-- No label (top left) -->
+                        <line x1="82" y1="36" x2="62" y2="20" stroke="var(--fg-3)" stroke-width="0.8"/>
+                        <text x="58" y="17" class="nd-donut-pct" fill="#9CA3AF" font-size="11" font-weight="700" text-anchor="end">10%</text>
+                        <text x="58" y="29" class="nd-donut-label" font-size="9" fill="var(--fg-2)" text-anchor="end">No</text>
+
+                        <!-- Center text -->
+                        <text x="100" y="96" text-anchor="middle" font-size="10" font-weight="500" fill="var(--fg-3)">AI Meal</text>
+                        <text x="100" y="112" text-anchor="middle" font-size="10" font-weight="500" fill="var(--fg-3)">Recs?</text>
+                    </svg>
+                </div>
+                <div class="nd-donut-legend">
+                    <div class="nd-legend-item">
+                        <div class="nd-legend-dot" style="background: #2D6A4F;"></div>
+                        Yes - 40%
+                    </div>
+                    <div class="nd-legend-item">
+                        <div class="nd-legend-dot" style="background: #F59E0B;"></div>
+                        Maybe - 50%
+                    </div>
+                    <div class="nd-legend-item">
+                        <div class="nd-legend-dot" style="background: #E5E7EB;"></div>
+                        No - 10%
+                    </div>
+                </div>
+            </div>
+
+            <div class="cs-section-head rv" style="margin-top: 48px;">
+                <span class="sec-label">Feature Preferences</span>
+                <h2 class="sec-title" style="font-size: clamp(1.2rem, 2.5vw, 1.6rem);">What Users Want Most (30 Responses)</h2>
+            </div>
+            <div class="cs-features rv">
+                <div class="cs-feature">
+                    <span class="cs-feature-num" style="color: var(--gradient-1);">26.7%</span>
+                    <div>
+                        <h3>Customizable Meals</h3>
+                        <p>Users want flexibility - the ability to tailor orders to their exact dietary needs and taste preferences above all else.</p>
+                    </div>
+                </div>
+                <div class="cs-feature">
+                    <span class="cs-feature-num" style="color: var(--gradient-1);">20%</span>
+                    <div>
+                        <h3>Ingredient Transparency</h3>
+                        <p>Users care deeply about knowing exactly what goes into their food - sourcing, allergens, and full ingredient lists matter more than generic labels.</p>
+                    </div>
+                </div>
+                <div class="cs-feature">
+                    <span class="cs-feature-num" style="color: var(--gradient-1);">16.7%</span>
+                    <div>
+                        <h3>AI-Based Meal Recommendations</h3>
+                        <p>Strong demand for AI-driven meal options tailored to individual health goals - but awareness of the technology needs to be built alongside the feature.</p>
+                    </div>
+                </div>
+                <div class="cs-feature">
+                    <span class="cs-feature-num" style="color: var(--gradient-1);">13.3%</span>
+                    <div>
+                        <h3>Dietary Filters + Subscription Discounts</h3>
+                        <p>Health-focused filtering and affordability are equally important - healthy eating needs to be accessible, not just aspirational.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cs-quote rv" style="margin-top: 36px;">
+                <p>"A customizable meal system with ingredient transparency and AI-based recommendations would be highly effective. The 50% 'unsure' group on AI represents an education opportunity - not a rejection."</p>
+                <cite>Research Conclusion</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 User Personas -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">04</span>
+                <h2 class="sec-title">User Personas</h2>
+            </div>
+            <div class="cs-persona-grid rv">
+                <div class="cs-persona-card">
+                    <div class="cs-persona-header">
+                        <div class="cs-persona-avatar">FE</div>
+                        <div>
+                            <h3>Fitness Enthusiast</h3>
+                            <span>Active Professional · Age 28</span>
+                        </div>
+                    </div>
+                    <div class="cs-persona-detail">
+                        <p>Tracks calories and macros daily. Orders food 4-5 times per week. Follows a keto diet and needs high-protein, low-carb options without manual searching.</p>
+                    </div>
+                    <div class="cs-persona-row">
+                        <div class="persona-goal">
+                            <span class="persona-goal-title">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                                Goal
+                            </span>
+                            <p>Find meals that fit his diet instantly - without opening a nutrition calculator or checking ingredient lists manually.</p>
+                        </div>
+                        <div class="persona-pain">
+                            <span class="persona-pain-title">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                Pain Point
+                            </span>
+                            <p>No macro filters in current apps. Relies on guesswork. Often gives up and eats outside his diet because it's too hard to verify meals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cs-persona-card">
+                    <div class="cs-persona-header">
+                        <div class="cs-persona-avatar">AP</div>
+                        <div>
+                            <h3>Allergy-Aware Parent</h3>
+                            <span>Parent of Two · Age 35</span>
+                        </div>
+                    </div>
+                    <div class="cs-persona-detail">
+                        <p>Orders food for the whole family. Her child has a severe nut allergy. Every order carries anxiety - even one mistake could be dangerous.</p>
+                    </div>
+                    <div class="cs-persona-row">
+                        <div class="persona-goal">
+                            <span class="persona-goal-title">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                                Goal
+                            </span>
+                            <p>Order with complete confidence that her child's allergen needs are met - no fear, no second-guessing, no external research needed.</p>
+                        </div>
+                        <div class="persona-pain">
+                            <span class="persona-pain-title">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                Pain Point
+                            </span>
+                            <p>Allergen warnings are vague or missing entirely. Often calls restaurants directly to verify - a frustrating, time-consuming workaround.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 Competitive Analysis -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">05</span>
+                <h2 class="sec-title">Competitive Analysis</h2>
+            </div>
+            <p class="cs-body rv">Existing apps fail health-conscious users in critical ways. NutriDash fills the gaps that none of them address together.</p>
+            <div class="cs-table-wrap rv">
+                <table class="cs-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Swiggy</th>
+                            <th>Zomato</th>
+                            <th>HealthifyMe</th>
+                            <th class="cs-table-highlight">NutriDash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ingredient transparency</td>
+                            <td style="color: var(--fg-3);">Partial</td>
+                            <td style="color: var(--fg-3);">Partial</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Real-time allergen alerts</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>AI meal recommendations</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Customizable meals</td>
+                            <td style="color: var(--fg-3);">Limited</td>
+                            <td style="color: var(--fg-3);">Limited</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Macro & calorie tracking</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Smart meal swapping</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Subscription meal plans</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Gamification for health</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td style="color: var(--fg-3);">Partial</td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 Design Process -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">06</span>
+                <h2 class="sec-title">6-Day Design Sprint</h2>
+            </div>
+            <p class="cs-body rv">I followed a structured sprint methodology - moving from problem understanding to tested prototypes in 6 focused days.</p>
+            <div class="nd-timeline rv">
+                <div class="nd-timeline-node">
+                    <div class="nd-timeline-circle" style="background: #A7D9C1;">1</div>
+                    <span class="nd-timeline-label">Understand</span>
+                </div>
+                <div class="nd-timeline-node">
+                    <div class="nd-timeline-circle" style="background: #7CC9A5;">2</div>
+                    <span class="nd-timeline-label">Research</span>
+                </div>
+                <div class="nd-timeline-node">
+                    <div class="nd-timeline-circle" style="background: #52B788;">3</div>
+                    <span class="nd-timeline-label">Redefine</span>
+                </div>
+                <div class="nd-timeline-node">
+                    <div class="nd-timeline-circle" style="background: #3D9970;">4</div>
+                    <span class="nd-timeline-label">Ideate</span>
+                </div>
+                <div class="nd-timeline-node">
+                    <div class="nd-timeline-circle" style="background: #2D7D56;">5</div>
+                    <span class="nd-timeline-label">Prototype</span>
+                </div>
+                <div class="nd-timeline-node">
+                    <div class="nd-timeline-circle" style="background: #2D6A4F;">6</div>
+                    <span class="nd-timeline-label">Test</span>
+                </div>
+            </div>
+            <div class="cs-process-grid rv">
+                <div class="cs-process-card">
+                    <span class="cs-process-num">Day 01</span>
+                    <h3>Understand</h3>
+                    <p>Defined and framed the problem statement. Identified who is affected, what the core issue is, why it matters, and what needs to change.</p>
+                </div>
+                <div class="cs-process-card">
+                    <span class="cs-process-num">Day 02</span>
+                    <h3>Research</h3>
+                    <p>Conducted a 30-person survey. Extracted key metrics across feature preferences, AI adoption rates, and dietary priorities. Validated every assumption with real data.</p>
+                </div>
+                <div class="cs-process-card">
+                    <span class="cs-process-num">Day 03</span>
+                    <h3>Redefine</h3>
+                    <p>Mapped the Who/What/How/When framework. Documented the before and after impact. Sharpened the problem to a precise, actionable design brief.</p>
+                </div>
+                <div class="cs-process-card">
+                    <span class="cs-process-num">Day 04</span>
+                    <h3>Ideate</h3>
+                    <p>Ran both convergent and divergent brainstorming. Identified 3 high-impact convergent solutions and 2 bold divergent concepts including a virtual nutritionist chatbot.</p>
+                </div>
+                <div class="cs-process-card">
+                    <span class="cs-process-num">Day 05</span>
+                    <h3>Prototype</h3>
+                    <p>Hand-drawn sketches to validate flow before screens. Built high-fidelity mockups in Figma for 4 core user flows - Order, Nutrition, Swap, and Dashboard.</p>
+                </div>
+                <div class="cs-process-card">
+                    <span class="cs-process-num">Day 06</span>
+                    <h3>Test</h3>
+                    <p>In-person usability testing with 6 real users. Collected structured feedback and documented 4 key iterations grounded in specific user pain points.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07 Brainstorming -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">07</span>
+                <h2 class="sec-title">Brainstorming & Ideation</h2>
+            </div>
+            <p class="cs-body rv">I used both convergent thinking (best practical solutions) and divergent thinking (bold unconventional ideas) before settling on the final feature set.</p>
+
+            <div class="cs-section-head rv" style="margin-bottom: 16px;">
+                <span class="sec-label">Convergent</span>
+                <h2 class="sec-title" style="font-size: clamp(1.1rem, 2vw, 1.4rem);">High Impact, Practical</h2>
+            </div>
+            <div class="cs-idea-grid rv" style="margin-bottom: 48px;">
+                <div class="cs-idea-card">
+                    <h3>Ingredient Transparency Panel</h3>
+                    <ul>
+                        <li>Detailed ingredients with sourcing details</li>
+                        <li>Nutritional breakdown - macros, calories, dietary info</li>
+                        <li>Real-time allergen pop-up alerts</li>
+                        <li>Auto dietary tags - vegan, gluten-free, keto</li>
+                    </ul>
+                </div>
+                <div class="cs-idea-card">
+                    <h3>AI-Powered Recommendations</h3>
+                    <ul>
+                        <li>Smart suggestions based on preferences and past orders</li>
+                        <li>Real-time calorie tracker synced with MyFitnessPal</li>
+                        <li>AI flags hidden allergens automatically</li>
+                        <li>Faster meal discovery without manual checking</li>
+                    </ul>
+                </div>
+                <div class="cs-idea-card">
+                    <h3>Food History & Dashboard</h3>
+                    <ul>
+                        <li>Order history breakdown - calories, macros tracked</li>
+                        <li>Weekly health report with intake insights</li>
+                        <li>Meal recommendations based on past healthy patterns</li>
+                        <li>Builds loyalty and health-focused ecosystem</li>
+                    </ul>
+                </div>
+                <div class="cs-idea-card">
+                    <h3>Smart Meal Swapping</h3>
+                    <ul>
+                        <li>Pizza cheese → plant-based cheese</li>
+                        <li>Burger bun → gluten-free bun</li>
+                        <li>Fried chicken → grilled chicken option</li>
+                        <li>Dynamic swaps based on user health goals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cs-section-head rv" style="margin-bottom: 16px;">
+                <span class="sec-label">Divergent</span>
+                <h2 class="sec-title" style="font-size: clamp(1.1rem, 2vw, 1.4rem);">Bold & Unconventional</h2>
+            </div>
+            <div class="cs-idea-grid rv">
+                <div class="cs-idea-card">
+                    <h3>Virtual Nutritionist Chatbot</h3>
+                    <ul>
+                        <li>Real-time questions about any meal's health impact</li>
+                        <li>"Is this grilled chicken suitable for keto?"</li>
+                        <li>Personalized advice using user health profile</li>
+                        <li>Complex AI modeling - future phase</li>
+                    </ul>
+                </div>
+                <div class="cs-idea-card">
+                    <h3>AR Ingredient Scanner</h3>
+                    <ul>
+                        <li>Point camera at food - identifies ingredients instantly</li>
+                        <li>Works in restaurants, at home, or packaged food</li>
+                        <li>Could integrate with wearables for real-time tracking</li>
+                        <li>Hardware + ML complexity - long-term vision</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 08 Core Features -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">08</span>
+                <h2 class="sec-title">Core Features Designed</h2>
+            </div>
+            <p class="cs-body rv">From the brainstorming session I converged on 4 high-impact features that directly address the research findings and user pain points.</p>
+            <div class="cs-features rv">
+                <div class="cs-feature">
+                    <span class="cs-feature-num">01</span>
+                    <div>
+                        <h3>Ingredient Transparency Panel</h3>
+                        <p>A dedicated section on the meal details page showing full ingredient breakdown, sourcing details, macros, calories, real-time allergen alerts, and automatic dietary tags. Boosts user trust and allows informed choices in seconds.</p>
+                    </div>
+                </div>
+                <div class="cs-feature">
+                    <span class="cs-feature-num">02</span>
+                    <div>
+                        <h3>AI-Powered Meal Recommendations</h3>
+                        <p>Smart meal suggestions based on saved dietary preferences, past orders, and health goals. Syncs with fitness apps for real-time calorie tracking. AI flags meals with hidden allergens automatically.</p>
+                    </div>
+                </div>
+                <div class="cs-feature">
+                    <span class="cs-feature-num">03</span>
+                    <div>
+                        <h3>Smart Meal Swapping</h3>
+                        <p>Auto-swaps unhealthy ingredients with healthier alternatives without changing the meal type. User inputs health goals and the app dynamically suggests swaps - plant-based, gluten-free, grilled instead of fried.</p>
+                    </div>
+                </div>
+                <div class="cs-feature">
+                    <span class="cs-feature-num">04</span>
+                    <div>
+                        <h3>Food History & Health Dashboard</h3>
+                        <p>Personalized dashboard tracking previous orders, health stats, and meal insights. Weekly health reports, calorie intake summaries, and smart re-order suggestions based on past healthy choices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 09 UI Screens -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">09</span>
+                <h2 class="sec-title">Final Design</h2>
+            </div>
+            <p class="cs-body rv">High-fidelity screens designed in Figma covering the 4 core user flows. Each screen was designed after hand-drawn wireframes validated the layout and flow.</p>
+            <div class="screens-grid rv">
+                <div class="screen-item">
+                    <div class="screen-placeholder-card has-image">
+                        <img class="card-uploaded-image" src="Frame.png" alt="ORDER PAGE" style="display:block">
+                        <div class="card-hover-overlay">
+                            <span>View Screen</span>
+                        </div>
+                    </div>
+                    <div class="screen-meta">
+                        <h3 class="screen-title">ORDER PAGE</h3>
+                    </div>
+                </div>
+                <div class="screen-item">
+                    <div class="screen-placeholder-card has-image">
+                        <img class="card-uploaded-image" src="Frame-1.png" alt="NUTRITION INFO" style="display:block">
+                        <div class="card-hover-overlay">
+                            <span>View Screen</span>
+                        </div>
+                    </div>
+                    <div class="screen-meta">
+                        <h3 class="screen-title">NUTRITION INFO</h3>
+                    </div>
+                </div>
+                <div class="screen-item">
+                    <div class="screen-placeholder-card has-image">
+                        <img class="card-uploaded-image" src="Frame-2.png" alt="INGREDIENT SWAP" style="display:block">
+                        <div class="card-hover-overlay">
+                            <span>View Screen</span>
+                        </div>
+                    </div>
+                    <div class="screen-meta">
+                        <h3 class="screen-title">INGREDIENT SWAP</h3>
+                    </div>
+                </div>
+                <div class="screen-item">
+                    <div class="screen-placeholder-card has-image">
+                        <img class="card-uploaded-image" src="Frame-3.png" alt="DAILY INTAKE" style="display:block">
+                        <div class="card-hover-overlay">
+                            <span>View Screen</span>
+                        </div>
+                    </div>
+                    <div class="screen-meta">
+                        <h3 class="screen-title">DAILY INTAKE</h3>
+                    </div>
+                </div>
+                <div class="screen-item">
+                    <div class="screen-placeholder-card has-image">
+                        <img class="card-uploaded-image" src="Frame-4.png" alt="AI RECOMMENDATIONS" style="display:block">
+                        <div class="card-hover-overlay">
+                            <span>View Screen</span>
+                        </div>
+                    </div>
+                    <div class="screen-meta">
+                        <h3 class="screen-title">AI RECOMMENDATIONS</h3>
+                    </div>
+                </div>
+                <div class="screen-item">
+                    <div class="screen-placeholder-card has-image">
+                        <img class="card-uploaded-image" src="Frame-5.png" alt="DESIGN ITERATIONS" style="display:block">
+                        <div class="card-hover-overlay">
+                            <span>View Screen</span>
+                        </div>
+                    </div>
+                    <div class="screen-meta">
+                        <h3 class="screen-title">DESIGN ITERATIONS</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10 Usability Testing -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">10</span>
+                <h2 class="sec-title">Usability Testing</h2>
+            </div>
+            <p class="cs-body rv">Real in-person usability testing with 6 actual users. Not assumptions. Not surveys alone. Real people, real reactions, real problems uncovered.</p>
+            <div class="cs-problems cs-grid-2x2 rv">
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Preparation Time Issue</h3>
+                    <p>Restaurant owners noted that healthy meals take longer to prepare, risking delays during peak hours. Users needed realistic visibility into wait times before ordering.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Cost Barrier</h3>
+                    <p>Several users found healthy meal options too expensive to order regularly. Healthy eating felt aspirational but not accessible. Affordability was a real blocker.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <h3>Scheduling Needs</h3>
+                    <p>Users wanted to align meal delivery with their daily routines - post-gym sessions, lunch breaks, or pre-planned weekly schedules. Planning ahead was missing entirely.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Health App Integration</h3>
+                    <p>Strong interest in syncing with Apple Watch, Google Fit, and Fitbit to automatically track calorie intake. Users wanted food choices to flow into their existing health ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11 Iterations -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">11</span>
+                <h2 class="sec-title">Design Iterations</h2>
+            </div>
+            <p class="cs-body rv">Based on usability testing I made 4 concrete design improvements - each directly addressing a specific user pain point discovered during testing.</p>
+            <div class="cs-decisions rv">
+                <div class="cs-decision">
+                    <div class="cs-decision-arrow">01</div>
+                    <div>
+                        <h3>Prep Time Badge</h3>
+                        <p>Introduced a Prep Time Badge on each meal card so users know what to expect before ordering. Added a "Quick and Healthy" filter for meals under 20 minutes. Restaurants can set prep-time limits during busy hours.</p>
+                    </div>
+                </div>
+                <div class="cs-decision">
+                    <div class="cs-decision-arrow">02</div>
+                    <div>
+                        <h3>Subscription Meal Plans</h3>
+                        <p>Partnered with restaurants for budget-friendly healthy combos. Added weekly subscription plans with discounted pricing. Designed a Meal Credit reward system - earn points for consistent ordering.</p>
+                    </div>
+                </div>
+                <div class="cs-decision">
+                    <div class="cs-decision-arrow">03</div>
+                    <div>
+                        <h3>Smart Delivery Scheduling</h3>
+                        <p>Built smart scheduling - delivery slot selection based on time of day, activity type, or calendar sync. Save routine schedules for faster future orders. Push reminders for regular meal times.</p>
+                    </div>
+                </div>
+                <div class="cs-decision">
+                    <div class="cs-decision-arrow">04</div>
+                    <div>
+                        <h3>Gamification for Motivation</h3>
+                        <p>Users earn badges for consistency (e.g., "Healthy Streak: 7 Days"). Daily wellness tips and healthy eating facts. Health progress tracking integrated with Apple Health and Fitbit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12 Future Scope -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">12</span>
+                <h2 class="sec-title">Future Scope</h2>
+            </div>
+            <p class="cs-body rv">With a larger user base and more development time, these next-phase features would significantly deepen the product value.</p>
+            <div class="cs-future-grid rv">
+                <div class="cs-future-card accent-purple">
+                    <div class="future-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Virtual Nutritionist Chatbot</h3>
+                    <p>AI chatbot answering real-time questions about any meal. Uses user health profile and app ingredient data to give personalized dietary advice.</p>
+                </div>
+                <div class="cs-future-card accent-blue">
+                    <div class="future-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Wearable Integration</h3>
+                    <p>Sync with Apple Watch, Google Fit, and Fitbit to auto-track calorie intake. App sends smart meal recommendations based on real-time health data.</p>
+                </div>
+                <div class="cs-future-card accent-blue">
+                    <div class="future-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Restaurant Health Score</h3>
+                    <p>A verified health rating system for restaurants based on ingredient quality, preparation methods, and nutritional accuracy. Builds platform-wide trust.</p>
+                </div>
+                <div class="cs-future-card accent-purple">
+                    <div class="future-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3>Corporate Wellness Program</h3>
+                    <p>A B2B marketplace connecting corporate wellness programs with meal prep providers. Employees get subsidized healthy meal delivery through their employer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13 Reflection -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">13</span>
+                <h2 class="sec-title">Reflection & Learnings</h2>
+            </div>
+            <div class="cs-learnings rv">
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>Real research changes everything</h3>
+                        <p>Having actual survey data from 30 respondents changed every design decision. Numbers like 56.7% and 40% aren't estimates - they're real user voices. Every designer should start with research, not assumptions.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>Usability testing reveals what you miss</h3>
+                        <p>I didn't anticipate the prep time issue or the cost barrier until real users raised them. Testing with just 6 people uncovered 4 significant problems I had completely overlooked.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>Iterations show design maturity</h3>
+                        <p>Taking feedback and turning it into specific design changes - prep time badge, subscription plans, smart scheduling, gamification - is what separates a finished product from a concept.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>What I'd do differently</h3>
+                        <p>I'd define success metrics upfront - task completion rate on the ingredient panel, allergen alert click-through rate, repeat order frequency. Measuring impact from day one makes the design stronger.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>The 50% "maybe" group is the real opportunity</h3>
+                        <p>Half of respondents were unsure about AI recommendations - not against it. This isn't rejection, it's an education gap. The app needs to show value through onboarding and subtle UI nudges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="contact">
+        <div class="wrap">
+            <div class="contact-inner rv">
+                <h2>Want to work <span class="gradient-text">together?</span></h2>
+                <p>Let's discuss how I can help with your next project.</p>
+                <div class="contact-actions">
+                    <a href="mailto:jamaluiux04@gmail.com" class="btn-primary">Get in Touch</a>
+                    <a href="index.html" class="btn-secondary">View More Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-inner">
+                <span class="footer-copy">&copy; 2026 Mohammed Jamal</span>
+                <span class="footer-note">Designed & built from scratch</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="Preview">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+            document.querySelectorAll('.screen-placeholder-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const img = card.querySelector('.card-uploaded-image');
+                    if (img && img.src) {
+                        lightboxImg.src = img.src;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', closeLightbox);
+            lightboxImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>
