@@ -36,7 +36,8 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: 36px;
+    margin-top: 56px;
+    margin-bottom: 40px;
 }
 .nd-donut-chart {
     position: relative;
