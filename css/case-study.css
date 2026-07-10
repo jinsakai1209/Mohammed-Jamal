@@ -434,35 +434,36 @@
     background: var(--surface-hover);
 }
 .cs-persona-dark {
-    background: #111214;
-    border-color: #222;
+    background: #1e1e2e;
+    border-color: #2a2a3a;
 }
-.cs-persona-dark h3 { color: #ffffff; }
-.cs-persona-card.cs-persona-dark .persona-goal-title,
-[data-theme="dark"] .cs-persona-dark .persona-goal-title,
-[data-theme="light"] .cs-persona-dark .persona-goal-title { color: #34d399; }
-.cs-persona-card.cs-persona-dark .persona-pain-title,
-[data-theme="dark"] .cs-persona-dark .persona-pain-title,
-[data-theme="light"] .cs-persona-dark .persona-pain-title { color: #fbbf24; }
-.cs-persona-dark span,
-.cs-persona-dark p,
-.cs-persona-dark .cs-persona-detail p { color: #d4d4d4; }
-.cs-persona-dark .cs-persona-header span { color: #b0b0b0; }
+.cs-persona-dark h3 { color: #FFFFFF; }
+.cs-persona-dark .cs-persona-header span { color: #CBD5E1; }
+.cs-persona-dark .cs-persona-detail p { color: #F1F5F9; }
 .cs-persona-dark .cs-persona-detail {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.06);
     border-left-color: var(--gradient-2);
 }
+.cs-persona-card.cs-persona-dark .persona-goal-title,
+[data-theme="dark"] .cs-persona-dark .persona-goal-title,
+[data-theme="light"] .cs-persona-dark .persona-goal-title { color: #34D399; }
+.cs-persona-card.cs-persona-dark .persona-pain-title,
+[data-theme="dark"] .cs-persona-dark .persona-pain-title,
+[data-theme="light"] .cs-persona-dark .persona-pain-title { color: #FCD34D; }
+.cs-persona-dark .persona-goal p,
+.cs-persona-dark .persona-pain p { color: #E2E8F0; }
+.cs-persona-dark .cs-persona-avatar { opacity: 1; }
 .cs-persona-dark:hover {
-    background: #161819;
-    border-color: #333;
+    background: #24243a;
+    border-color: #3a3a4a;
 }
 [data-theme="light"] .cs-persona-dark {
-    background: #1a1c1e;
-    border-color: #2a2a2a;
+    background: #1e1e2e;
+    border-color: #2a2a3a;
 }
 [data-theme="light"] .cs-persona-dark:hover {
-    background: #222426;
-    border-color: #3a3a3a;
+    background: #24243a;
+    border-color: #3a3a4a;
 }
 .cs-persona-header {
     display: flex;
