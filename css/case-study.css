@@ -653,24 +653,28 @@ th.cs-table-highlight {
     background: var(--surface-hover);
 }
 .cs-process-num {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 28px; height: 28px; border-radius: 50%;
+    display: inline-block;
     font-size: .7rem; font-weight: 700;
     color: #fff; background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    padding: 5px 12px;
+    border-radius: 20px;
     margin-bottom: 10px;
 }
 .cs-process-card:not(:last-child)::after {
     content: '';
     position: absolute;
-    top: 36px;
+    top: 35px;
     right: -10px;
     width: 16px;
     height: 2px;
     background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
     z-index: 1;
 }
+.cs-process-card:nth-child(3n)::after {
+    display: none;
+}
 @media (max-width: 768px) {
-    .cs-process-card:not(:last-child)::after { display: none; }
+    .cs-process-card::after { display: none !important; }
 }
 .cs-process-card h3 {
     font-size: 1rem; font-weight: 700; margin-bottom: 6px;
