@@ -434,36 +434,42 @@
     background: var(--surface-hover);
 }
 .cs-persona-dark {
-    background: #1e1e2e;
-    border-color: #2a2a3a;
+    background: #1e1e2e !important;
+    border-color: #2a2a3a !important;
 }
-.cs-persona-dark h3 { color: #FFFFFF; }
-.cs-persona-dark .cs-persona-header span { color: #CBD5E1; }
-.cs-persona-dark .cs-persona-detail p { color: #F1F5F9; }
-.cs-persona-dark .cs-persona-detail {
+.cs-persona-dark:hover {
+    background: #24243a !important;
+    border-color: #3a3a4a !important;
+}
+.cs-persona-card.cs-persona-dark .cs-persona-header h3 {
+    color: #FFFFFF !important;
+}
+.cs-persona-card.cs-persona-dark .cs-persona-header span {
+    color: #CBD5E1 !important;
+}
+.cs-persona-card.cs-persona-dark .cs-persona-detail {
     background: rgba(255,255,255,0.06);
     border-left-color: var(--gradient-2);
 }
+.cs-persona-card.cs-persona-dark .cs-persona-detail p {
+    color: #F1F5F9 !important;
+}
 .cs-persona-card.cs-persona-dark .persona-goal-title,
 [data-theme="dark"] .cs-persona-dark .persona-goal-title,
-[data-theme="light"] .cs-persona-dark .persona-goal-title { color: #34D399; }
+[data-theme="light"] .cs-persona-dark .persona-goal-title { color: #34D399 !important; }
 .cs-persona-card.cs-persona-dark .persona-pain-title,
 [data-theme="dark"] .cs-persona-dark .persona-pain-title,
-[data-theme="light"] .cs-persona-dark .persona-pain-title { color: #FCD34D; }
-.cs-persona-dark .persona-goal p,
-.cs-persona-dark .persona-pain p { color: #E2E8F0; }
-.cs-persona-dark .cs-persona-avatar { opacity: 1; }
-.cs-persona-dark:hover {
-    background: #24243a;
-    border-color: #3a3a4a;
-}
+[data-theme="light"] .cs-persona-dark .persona-pain-title { color: #FCD34D !important; }
+.cs-persona-card.cs-persona-dark .persona-goal p,
+.cs-persona-card.cs-persona-dark .persona-pain p { color: #E2E8F0 !important; }
+.cs-persona-card.cs-persona-dark .cs-persona-avatar { opacity: 1 !important; }
 [data-theme="light"] .cs-persona-dark {
-    background: #1e1e2e;
-    border-color: #2a2a3a;
+    background: #1e1e2e !important;
+    border-color: #2a2a3a !important;
 }
 [data-theme="light"] .cs-persona-dark:hover {
-    background: #24243a;
-    border-color: #3a3a4a;
+    background: #24243a !important;
+    border-color: #3a3a4a !important;
 }
 .cs-persona-header {
     display: flex;
@@ -475,7 +481,7 @@
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    background: linear-gradient(135deg, #6D28D9, #4F46E5);
     display: flex;
     align-items: center;
     justify-content: center;
