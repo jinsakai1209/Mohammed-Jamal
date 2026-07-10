@@ -437,9 +437,9 @@
     background: #111214;
     border-color: #222;
 }
-.cs-persona-dark h3,
-.cs-persona-dark .persona-goal-title,
-.cs-persona-dark .persona-pain-title { color: #ffffff; }
+.cs-persona-dark h3 { color: #ffffff; }
+.cs-persona-dark .persona-goal-title { color: #34d399; }
+.cs-persona-dark .persona-pain-title { color: #fbbf24; }
 .cs-persona-dark span,
 .cs-persona-dark p,
 .cs-persona-dark .cs-persona-detail p { color: #d4d4d4; }
