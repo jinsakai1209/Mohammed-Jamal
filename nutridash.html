@@ -237,7 +237,7 @@
                     <span class="cs-feature-num" style="color: var(--gradient-1);">26.7%</span>
                     <div>
                         <h3>Customizable Meals</h3>
-                        <div class="cs-feature-bar"><div class="cs-feature-bar-fill" style="width:100%"></div></div>
+                        <div class="cs-feature-bar"><div class="cs-feature-bar-fill" style="--bar-width:100%"></div></div>
                         <p>Users want flexibility - the ability to tailor orders to their exact dietary needs and taste preferences above all else.</p>
                     </div>
                 </div>
@@ -245,7 +245,7 @@
                     <span class="cs-feature-num" style="color: var(--gradient-1);">20%</span>
                     <div>
                         <h3>Ingredient Transparency</h3>
-                        <div class="cs-feature-bar"><div class="cs-feature-bar-fill" style="width:75%"></div></div>
+                        <div class="cs-feature-bar"><div class="cs-feature-bar-fill" style="--bar-width:75%"></div></div>
                         <p>Users care deeply about knowing exactly what goes into their food - sourcing, allergens, and full ingredient lists matter more than generic labels.</p>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
                     <span class="cs-feature-num" style="color: var(--gradient-1);">16.7%</span>
                     <div>
                         <h3>AI-Based Meal Recommendations</h3>
-                        <div class="cs-feature-bar"><div class="cs-feature-bar-fill" style="width:63%"></div></div>
+                        <div class="cs-feature-bar"><div class="cs-feature-bar-fill" style="--bar-width:63%"></div></div>
                         <p>Strong demand for AI-driven meal options tailored to individual health goals - but awareness of the technology needs to be built alongside the feature.</p>
                     </div>
                 </div>
@@ -261,7 +261,7 @@
                     <span class="cs-feature-num" style="color: var(--gradient-1);">13.3%</span>
                     <div>
                         <h3>Dietary Filters + Subscription Discounts</h3>
-                        <div class="cs-feature-bar"><div class="cs-feature-bar-fill" style="width:50%"></div></div>
+                        <div class="cs-feature-bar"><div class="cs-feature-bar-fill" style="--bar-width:50%"></div></div>
                         <p>Health-focused filtering and affordability are equally important - healthy eating needs to be accessible, not just aspirational.</p>
                     </div>
                 </div>
@@ -932,6 +932,16 @@
             lightboxImg.addEventListener('click', (e) => {
                 e.stopPropagation();
             });
+
+            const barObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        barObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            document.querySelectorAll('.cs-feature-bar-fill').forEach(bar => barObserver.observe(bar));
         });
     </script>
 </body>

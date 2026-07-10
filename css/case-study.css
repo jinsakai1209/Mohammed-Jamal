@@ -736,7 +736,7 @@ th.cs-table-highlight {
 }
 .cs-feature-bar {
     height: 6px;
-    background: var(--border);
+    background: #E5E7EB;
     border-radius: 3px;
     margin: 8px 0 10px;
     overflow: hidden;
@@ -744,7 +744,12 @@ th.cs-table-highlight {
 .cs-feature-bar-fill {
     height: 100%;
     border-radius: 3px;
-    background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+    background: #10b981;
+    width: 0%;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cs-feature-bar-fill.animated {
+    width: var(--bar-width);
 }
 .cs-feature p {
     font-size: .8rem; color: var(--fg-2); line-height: 1.65;
