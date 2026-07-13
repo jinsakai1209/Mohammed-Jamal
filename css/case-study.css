@@ -1132,7 +1132,9 @@ th.cs-table-highlight {
     .cs-meta-grid { grid-template-columns: 1fr 1fr; }
     .cs-persona-row { grid-template-columns: 1fr; }
     .cs-feature { flex-direction: column; gap: 8px; }
+    .cs-feature-num { width: auto; text-align: left; font-size: 1.25rem; }
     .cs-decision { flex-direction: column; gap: 8px; }
+    .cs-decision-arrow { width: auto; text-align: left; }
     .cs-learning { flex-direction: column; gap: 8px; }
     .screens-grid { grid-template-columns: 1fr; }
 }
