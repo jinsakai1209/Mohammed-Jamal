@@ -12,11 +12,30 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/case-study.css?v=3">
     <style>
+        /* Override site-wide purple gradient tokens with DocVault blue */
+        :root { --gradient-1: #2563EB; --gradient-2: #1E40AF; }
+        [data-theme="dark"] { --gradient-1: #60A5FA; --gradient-2: #93C5FD; }
+
         .cs-hero-title { color: #2563EB !important; }
         [data-theme="dark"] .cs-hero-title { color: #60A5FA !important; }
 
-        .dv-accent { color: #2563EB; }
-        [data-theme="dark"] .dv-accent { color: #60A5FA; }
+        /* Persona avatar gradient → blue */
+        .cs-persona-avatar {
+            background: linear-gradient(135deg, #2563EB, #1E40AF) !important;
+        }
+        [data-theme="dark"] .cs-persona-avatar {
+            background: linear-gradient(135deg, #3B82F6, #2563EB) !important;
+        }
+
+        /* Process pill badge gradient → blue */
+        .cs-process-badge {
+            background: linear-gradient(135deg, #2563EB, #1E40AF) !important;
+        }
+
+        /* Feature bar fill → blue */
+        .cs-feature-bar-fill {
+            background: #2563EB !important;
+        }
 
         /* DocVault table highlight override */
         .dv-table th.cs-table-highlight {
