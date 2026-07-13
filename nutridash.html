@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/case-study.css?v=3">
     <style>
+        /* Override site-wide purple gradient tokens with NutriDash green */
+        :root { --gradient-1: #10B981; --gradient-2: #059669; }
+        [data-theme="dark"] { --gradient-1: #34D399; --gradient-2: #6EE7B7; }
+
+        .cs-hero-title { color: #10B981 !important; }
+        [data-theme="dark"] .cs-hero-title { color: #34D399 !important; }
+
+        .cs-persona-avatar {
+            background: linear-gradient(135deg, #10B981, #059669) !important;
+        }
+        [data-theme="dark"] .cs-persona-avatar {
+            background: linear-gradient(135deg, #34D399, #10B981) !important;
+        }
+
         .cs-hero-image-wrap .hero-device img {
             border-radius: 0;
             box-shadow: none;
