@@ -805,6 +805,16 @@ th.cs-table-highlight {
     --card-accent-bg: rgba(124, 58, 237, 0.08);
     --card-glow: rgba(124, 58, 237, 0.15);
 }
+.cs-future-card.accent-green {
+    --card-accent: #10B981;
+    --card-accent-bg: rgba(16, 185, 129, 0.08);
+    --card-glow: rgba(16, 185, 129, 0.15);
+}
+.cs-future-card.accent-orange {
+    --card-accent: #FF6B00;
+    --card-accent-bg: rgba(255, 107, 0, 0.08);
+    --card-glow: rgba(255, 107, 0, 0.15);
+}
 .cs-future-card {
     padding: 28px 24px;
     border-radius: 14px;
