@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocVault AI - Case Study | Mohammed Jamal</title>
+    <meta name="description" content="UX case study for DocVault AI - an AI-powered SharePoint Document Management System designed end to end, from landing page to app UI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/case-study.css?v=3">
+    <style>
+        .dv-flow-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        .dv-flow-card:hover {
+            border-color: var(--gradient-2);
+        }
+        .dv-flow-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            color: var(--fg);
+        }
+        .dv-flow-type {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gradient-2);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .dv-flow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+        .dv-flow-step {
+            font-size: 0.78rem;
+            color: var(--fg-2);
+            background: var(--surface-hover);
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+        .dv-flow-arrow {
+            color: var(--fg-3);
+            font-size: 0.75rem;
+        }
+        .dv-pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .dv-pillar-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .dv-pillar-card:hover {
+            border-color: var(--gradient-2);
+            transform: translateY(-2px);
+        }
+        .dv-pillar-num {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        .dv-pillar-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: var(--fg);
+        }
+        .dv-pillar-card p {
+            font-size: 0.8rem;
+            color: var(--fg-2);
+            line-height: 1.5;
+            margin: 0;
+        }
+        .dv-landing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .dv-landing-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: border-color 0.3s;
+        }
+        .dv-landing-card:hover {
+            border-color: var(--gradient-2);
+        }
+        .dv-landing-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--gradient-2);
+            margin-bottom: 6px;
+        }
+        .dv-landing-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: var(--fg);
+        }
+        .dv-landing-card p {
+            font-size: 0.82rem;
+            color: var(--fg-2);
+            line-height: 1.55;
+            margin: 0;
+        }
+        .dv-screen-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 24px;
+        }
+        .dv-screen-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            transition: border-color 0.3s;
+        }
+        .dv-screen-card:hover {
+            border-color: var(--gradient-2);
+        }
+        .dv-screen-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--fg);
+            margin: 0;
+        }
+        .dv-screen-card p {
+            font-size: 0.8rem;
+            color: var(--fg-2);
+            margin: 0;
+            max-width: 280px;
+        }
+        .dv-screen-placeholder {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(79,70,229,0.1), rgba(99,102,241,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dv-future-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .dv-future-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: border-color 0.3s;
+        }
+        .dv-future-card:hover {
+            border-color: var(--gradient-2);
+        }
+        .dv-future-phase {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--gradient-1);
+            margin-bottom: 6px;
+        }
+        .dv-future-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: var(--fg);
+        }
+        .dv-future-card p {
+            font-size: 0.82rem;
+            color: var(--fg-2);
+            line-height: 1.55;
+            margin: 0;
+        }
+        .dv-users-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .dv-user-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            transition: border-color 0.3s;
+        }
+        .dv-user-card:hover {
+            border-color: var(--gradient-2);
+        }
+        .dv-user-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+            color: var(--fg);
+        }
+        .dv-user-card > p {
+            font-size: 0.82rem;
+            color: var(--fg-2);
+            line-height: 1.55;
+            margin: 0 0 12px 0;
+        }
+        .dv-user-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .dv-user-card ul li {
+            font-size: 0.78rem;
+            color: var(--fg-2);
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+        .dv-user-card ul li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: var(--gradient-2);
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .dv-pillar-grid,
+            .dv-users-grid {
+                grid-template-columns: 1fr;
+            }
+            .dv-landing-grid,
+            .dv-screen-grid,
+            .dv-future-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .dv-pillar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-mark">MJ<span class="logo-dot">.</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#work">Work</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#tools">Tools</a>
+                <a href="index.html#blog">Blog</a>
+            </div>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
+                    <svg class="ico-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="ico-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="mailto:jamaluiux04@gmail.com" class="nav-cta">Get in Touch</a>
+            </div>
+            <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mob-menu" id="mobMenu">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="mailto:jamaluiux04@gmail.com" class="mob-cta">Get in Touch</a>
+    </div>
+
+    <!-- Case Study Hero -->
+    <section class="cs-hero">
+        <div class="hero-mesh-bg">
+            <div class="mesh-gradient-wrapper">
+                <div class="mesh-blob blob-1"></div>
+                <div class="mesh-blob blob-2"></div>
+                <div class="mesh-blob blob-3"></div>
+                <div class="mesh-blob blob-4"></div>
+                <div class="mesh-blob blob-5"></div>
+            </div>
+            <div class="mesh-overlay"></div>
+        </div>
+        <div class="wrap">
+            <a href="index.html" class="cs-back rv">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Back to Home
+            </a>
+            <div class="cs-hero-tags rv">
+                <span>Web App + Landing Page</span>
+                <span>Real Product</span>
+                <span>Solo Designer</span>
+            </div>
+            <h1 class="cs-hero-title rv">DocVault AI</h1>
+            <p class="cs-hero-subtitle rv">An AI-powered SharePoint Document Management System designed from scratch - end to end, landing page to app UI.</p>
+            <div class="cs-hero-stats rv">
+                <div class="h-stat">
+                    <span class="h-stat-num">1-3</span>
+                    <span class="h-stat-label">Months to deliver</span>
+                </div>
+                <div class="h-stat">
+                    <span class="h-stat-num">2</span>
+                    <span class="h-stat-label">Products designed</span>
+                </div>
+                <div class="h-stat">
+                    <span class="h-stat-num">3</span>
+                    <span class="h-stat-label">User segments targeted</span>
+                </div>
+                <div class="h-stat">
+                    <span class="h-stat-num">6</span>
+                    <span class="h-stat-label">Core pillars designed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 01 Project Overview -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">01</span>
+                <h2 class="sec-title">Project Overview</h2>
+            </div>
+            <p class="cs-body rv">DocVault AI is a SharePoint-native document management system built by SharePoint Designs to solve enterprise document chaos. I was the sole designer responsible for the entire product - from the marketing landing page to the full application UI inside SharePoint. Designed from scratch over 1-3 months.</p>
+            <div class="cs-meta-grid rv">
+                <div class="cs-meta-card">
+                    <span class="cs-meta-label">Role</span>
+                    <span class="cs-meta-value">Solo UI/UX Designer (End to End)</span>
+                </div>
+                <div class="cs-meta-card">
+                    <span class="cs-meta-label">Timeline</span>
+                    <span class="cs-meta-value">1-3 Months Full Product</span>
+                </div>
+                <div class="cs-meta-card">
+                    <span class="cs-meta-label">Product Type</span>
+                    <span class="cs-meta-value">SaaS Web App + Landing Page</span>
+                </div>
+                <div class="cs-meta-card">
+                    <span class="cs-meta-label">Tools</span>
+                    <span class="cs-meta-value">Figma · Webflow · SharePoint</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02 Problem Statement -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">02</span>
+                <h2 class="sec-title">Problem Statement</h2>
+            </div>
+            <p class="cs-body rv">Enterprise teams using Microsoft SharePoint struggle with document chaos - files scattered across folders, no version control, compliance nightmares, and hours wasted searching for the right document. Existing solutions like Google Drive or Dropbox are not built for enterprise compliance needs, while enterprise alternatives like M-Files are expensive, complex, and require separate systems outside Microsoft 365.</p>
+            <div class="cs-problems rv">
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <h3>Document Discovery is Broken</h3>
+                    <p>Employees spend an average of 2+ hours per week searching for documents. SharePoint's native search is powerful but not intuitive for everyday users.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Compliance is a Constant Risk</h3>
+                    <p>Without proper version control, audit trails, and permission management, every document is a potential compliance violation waiting to happen.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <h3>No Unified System</h3>
+                    <p>Teams use a mix of SharePoint, email attachments, and personal drives. There's no single source of truth - leading to duplicate files and outdated versions.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <h3>Existing Tools Don't Fit</h3>
+                    <p>Google Drive and Dropbox lack enterprise compliance. M-Files is expensive and lives outside Microsoft 365. Companies need something native and affordable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03 Target Users -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">03</span>
+                <h2 class="sec-title">Target Users</h2>
+            </div>
+            <p class="cs-body rv">DocVault was designed for three distinct user types within an enterprise organisation. Each has different needs, different pain points, and different success metrics. Getting this right was the foundation of all design decisions.</p>
+            <div class="dv-users-grid rv">
+                <div class="dv-user-card">
+                    <h3>Business Users</h3>
+                    <p>Day-to-day employees who need to find and use documents quickly.</p>
+                    <ul>
+                        <li>Fast document search and discovery</li>
+                        <li>Simple upload and organisation</li>
+                        <li>No technical knowledge required</li>
+                        <li>Access right documents, right away</li>
+                    </ul>
+                </div>
+                <div class="dv-user-card">
+                    <h3>Compliance Managers</h3>
+                    <p>Responsible for ensuring the organisation meets regulatory requirements.</p>
+                    <ul>
+                        <li>Full audit trail of every document action</li>
+                        <li>Version control with rollback capability</li>
+                        <li>Permission management and access logs</li>
+                        <li>Compliance reporting at a glance</li>
+                    </ul>
+                </div>
+                <div class="dv-user-card">
+                    <h3>IT Managers</h3>
+                    <p>Responsible for deploying and maintaining the system.</p>
+                    <ul>
+                        <li>Easy deployment within Microsoft 365</li>
+                        <li>No separate infrastructure to manage</li>
+                        <li>Role-based access configuration</li>
+                        <li>Integration with existing SharePoint setup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04 Competitive Analysis -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">04</span>
+                <h2 class="sec-title">Competitive Analysis</h2>
+            </div>
+            <p class="cs-body rv">Before designing DocVault, I mapped out what existing tools offered and where they failed enterprise SharePoint users. This informed every design and positioning decision.</p>
+            <div class="cs-table-wrap rv">
+                <table class="cs-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Google Drive</th>
+                            <th>Dropbox</th>
+                            <th>M-Files</th>
+                            <th class="cs-table-highlight">DocVault AI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SharePoint native</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>AI-powered search</td>
+                            <td><div class="cell-status partial">~</div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Audit trail</td>
+                            <td><div class="cell-status partial">~</div></td>
+                            <td><div class="cell-status partial">~</div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Version control</td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Permission management</td>
+                            <td><div class="cell-status partial">~</div></td>
+                            <td><div class="cell-status partial">~</div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Compliance reporting</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft 365 native</td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>Affordable pricing</td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                        <tr>
+                            <td>No extra infrastructure</td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                            <td><div class="cell-status no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div></td>
+                            <td class="cs-table-highlight"><div class="cell-status yes"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05 Key Design Challenges -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">05</span>
+                <h2 class="sec-title">Key Design Challenges</h2>
+            </div>
+            <p class="cs-body rv">Designing DocVault presented three unique challenges that shaped every decision - from the information architecture to the visual language.</p>
+            <div class="cs-problems rv">
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Making Compliance Feel Simple</h3>
+                    <p>Compliance features are inherently complex - audit trails, permissions, version history. The challenge was presenting this complexity in a UI that feels clean and approachable. Solution: progressive disclosure - show the simple view first, advanced controls only when needed.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Designing for 3 Different Users</h3>
+                    <p>Business users, compliance managers, and IT managers all have completely different mental models and success criteria. A single UI had to serve all three. Solution: role-based dashboard views and contextual navigation that surfaces the right information for each user type.</p>
+                </div>
+                <div class="cs-problem-card">
+                    <div class="cs-problem-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <h3>Landing Page That Converts</h3>
+                    <p>The DocVault landing page needed to explain a complex enterprise product clearly enough to drive sign-ups. Enterprise buyers are skeptical. Solution: lead with the pain point, follow with social proof, end with a simple pricing model. No jargon above the fold.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06 Six Pillars -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">06</span>
+                <h2 class="sec-title">Six Pillars - One Coherent System</h2>
+            </div>
+            <p class="cs-body rv">DocVault is built around 6 core pillars. Each pillar maps to a specific user pain point and required its own distinct UI component and user flow.</p>
+            <div class="dv-pillar-grid rv">
+                <div class="dv-pillar-card">
+                    <span class="dv-pillar-num">01</span>
+                    <h3>Document Repository</h3>
+                    <p>Centralised storage with intelligent folder structure, drag-and-drop upload, and bulk operations.</p>
+                </div>
+                <div class="dv-pillar-card">
+                    <span class="dv-pillar-num">02</span>
+                    <h3>Version Control</h3>
+                    <p>Every document change tracked automatically. One-click rollback to any previous version.</p>
+                </div>
+                <div class="dv-pillar-card">
+                    <span class="dv-pillar-num">03</span>
+                    <h3>Permission Management</h3>
+                    <p>Role-based access control. Set permissions at folder or document level with audit logging.</p>
+                </div>
+                <div class="dv-pillar-card">
+                    <span class="dv-pillar-num">04</span>
+                    <h3>Workflow Automation</h3>
+                    <p>Automated approval flows, document routing, and notification triggers without code.</p>
+                </div>
+                <div class="dv-pillar-card">
+                    <span class="dv-pillar-num">05</span>
+                    <h3>Compliance Tracking</h3>
+                    <p>Real-time audit trail. Every view, edit, download, and share logged with timestamp and user.</p>
+                </div>
+                <div class="dv-pillar-card">
+                    <span class="dv-pillar-num">06</span>
+                    <h3>AI Search & Discovery</h3>
+                    <p>Natural language search across all documents. Find anything in seconds, not hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07 User Flows -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">07</span>
+                <h2 class="sec-title">User Flows Designed</h2>
+            </div>
+            <p class="cs-body rv">I mapped out 3 primary user flows before designing any screens. These flows became the backbone of the entire application architecture.</p>
+            <div class="rv">
+                <div class="dv-flow-card">
+                    <h3>Document Upload & Organisation Flow</h3>
+                    <span class="dv-flow-type">User type: Business User</span>
+                    <div class="dv-flow-steps">
+                        <span class="dv-flow-step">Login to DocVault via SharePoint</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Navigate to target folder</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Drag and drop files</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Add metadata tags</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Set permission level</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">AI indexes document</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Version 1.0 created</span>
+                    </div>
+                </div>
+                <div class="dv-flow-card">
+                    <h3>Compliance Audit Flow</h3>
+                    <span class="dv-flow-type">User type: Compliance Manager</span>
+                    <div class="dv-flow-steps">
+                        <span class="dv-flow-step">Access Compliance Dashboard</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Select document to audit</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">View activity timeline</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Filter by user/action/date</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Export audit report</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Flag suspicious activity</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Send to stakeholders</span>
+                    </div>
+                </div>
+                <div class="dv-flow-card">
+                    <h3>Document Approval Workflow</h3>
+                    <span class="dv-flow-type">User type: Business User + Manager</span>
+                    <div class="dv-flow-steps">
+                        <span class="dv-flow-step">Submit for approval</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Manager notified</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Review with comments</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Approve / Reject / Request changes</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">User notified</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Version locked</span>
+                        <span class="dv-flow-arrow">&rarr;</span>
+                        <span class="dv-flow-step">Audit trail updated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 08 Landing Page Design -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">08</span>
+                <h2 class="sec-title">Landing Page Design</h2>
+            </div>
+            <p class="cs-body rv">The DocVault landing page had one job - convert enterprise decision makers into trial sign-ups. I structured it around a clear persuasion hierarchy informed by enterprise buyer psychology.</p>
+            <div class="dv-landing-grid rv">
+                <div class="dv-landing-card">
+                    <span class="dv-landing-eyebrow">Lead with the pain point not the product</span>
+                    <h3>Hero Section</h3>
+                    <p>"Your company's documents, finally under control." - Speaks directly to the frustration before introducing the solution.</p>
+                </div>
+                <div class="dv-landing-card">
+                    <span class="dv-landing-eyebrow">Three users, three benefits</span>
+                    <h3>Value Proposition Strip</h3>
+                    <p>Immediately addressed all three user types - Business Users, Compliance Managers, IT Managers - so every visitor sees themselves in the product.</p>
+                </div>
+                <div class="dv-landing-card">
+                    <span class="dv-landing-eyebrow">Show how documents actually move</span>
+                    <h3>Feature Deep Dive</h3>
+                    <p>Demonstrated real workflows with annotated UI screenshots rather than generic feature lists. Enterprise buyers need to see the product working.</p>
+                </div>
+                <div class="dv-landing-card">
+                    <span class="dv-landing-eyebrow">One system, coherent message</span>
+                    <h3>Six Pillars Section</h3>
+                    <p>Positioned DocVault as a complete system rather than a collection of features. Each pillar is concise and maps to a specific pain point.</p>
+                </div>
+                <div class="dv-landing-card">
+                    <span class="dv-landing-eyebrow">Built for compliance anxiety</span>
+                    <h3>Audit Ready CTA</h3>
+                    <p>A dedicated section addressing compliance directly - the biggest fear of enterprise compliance managers.</p>
+                </div>
+                <div class="dv-landing-card">
+                    <span class="dv-landing-eyebrow">Why not just Drive or Dropbox?</span>
+                    <h3>Competitive Table</h3>
+                    <p>Directly answered the objection every buyer has. Side by side comparison with real data, not marketing claims.</p>
+                </div>
+                <div class="dv-landing-card">
+                    <span class="dv-landing-eyebrow">Customer testimonials and trust badges</span>
+                    <h3>Social Proof</h3>
+                    <p>G2, Capterra, and Gartner badges with real customer quotes. Enterprise buyers buy on trust, not features.</p>
+                </div>
+                <div class="dv-landing-card">
+                    <span class="dv-landing-eyebrow">One product, one price</span>
+                    <h3>Pricing</h3>
+                    <p>Simple monthly and one-time options. Removed pricing anxiety with a clear, no-surprise structure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 09 App UI Screens -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">09</span>
+                <h2 class="sec-title">App UI Screens</h2>
+            </div>
+            <p class="cs-body rv">The DocVault application UI was designed to live inside SharePoint, matching Microsoft Fluent design language while maintaining DocVault's own brand identity.</p>
+            <div class="dv-screen-grid rv">
+                <div class="dv-screen-card">
+                    <div class="dv-screen-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gradient-2)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <h3>Dashboard Home</h3>
+                    <p>Role-based welcome screen with recent documents and quick actions</p>
+                </div>
+                <div class="dv-screen-card">
+                    <div class="dv-screen-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gradient-2)" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Document Repository</h3>
+                    <p>Folder structure with list and grid view toggle</p>
+                </div>
+                <div class="dv-screen-card">
+                    <div class="dv-screen-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gradient-2)" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>Document Detail</h3>
+                    <p>Full document view with metadata, version history, and permissions</p>
+                </div>
+                <div class="dv-screen-card">
+                    <div class="dv-screen-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gradient-2)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Audit Trail</h3>
+                    <p>Compliance timeline with filter and export options</p>
+                </div>
+                <div class="dv-screen-card">
+                    <div class="dv-screen-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gradient-2)" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <h3>Workflow Builder</h3>
+                    <p>Visual drag-and-drop approval flow designer</p>
+                </div>
+                <div class="dv-screen-card">
+                    <div class="dv-screen-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gradient-2)" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <h3>Search Results</h3>
+                    <p>AI-powered natural language search with filters</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10 Key Design Decisions -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">10</span>
+                <h2 class="sec-title">Key Design Decisions</h2>
+            </div>
+            <p class="cs-body rv">These decisions were intentional and grounded in user behaviour and enterprise UX principles.</p>
+            <div class="cs-learnings rv">
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </span>
+                    <div>
+                        <h3>Microsoft Fluent Design Language</h3>
+                        <p>DocVault lives inside SharePoint - so it had to feel native. I followed Microsoft Fluent design tokens for color, spacing, and components while layering DocVault's brand identity on top. Users feel at home from day one.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </span>
+                    <div>
+                        <h3>Progressive Disclosure for Compliance</h3>
+                        <p>Compliance features are complex. Showing everything at once overwhelms users. I used progressive disclosure - simple view by default, with advanced controls one click away. This made the product feel approachable without sacrificing depth.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                    </span>
+                    <div>
+                        <h3>Role-Based Dashboard Views</h3>
+                        <p>Three different users, three different dashboards. Business users see recent documents. Compliance managers see audit alerts. IT managers see system health. Same product, personalised entry point.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11 Future Scope -->
+    <section class="cs-section">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">11</span>
+                <h2 class="sec-title">Future Scope</h2>
+            </div>
+            <p class="cs-body rv">With a growing user base, these next-phase features would deepen DocVault's product value and expand into new market segments.</p>
+            <div class="dv-future-grid rv">
+                <div class="dv-future-card">
+                    <span class="dv-future-phase">Phase 2 - AI</span>
+                    <h3>AI Contract Analysis</h3>
+                    <p>Automatically extract key clauses, dates, and parties from contracts. Flag risk areas and expiring agreements without manual review.</p>
+                </div>
+                <div class="dv-future-card">
+                    <span class="dv-future-phase">Phase 2 - Platform</span>
+                    <h3>Multi-Tenant Support</h3>
+                    <p>Allow law firms, accounting practices, and consulting agencies to manage documents for multiple client organisations from one DocVault instance.</p>
+                </div>
+                <div class="dv-future-card">
+                    <span class="dv-future-phase">Phase 3 - Mobile</span>
+                    <h3>Mobile App</h3>
+                    <p>A native iOS and Android companion app for document approvals and notifications on the go. Full offline access to pinned documents.</p>
+                </div>
+                <div class="dv-future-card">
+                    <span class="dv-future-phase">Phase 3 - Intelligence</span>
+                    <h3>DocVault Analytics</h3>
+                    <p>Document usage analytics for IT managers - most accessed files, storage trends, user activity patterns, and compliance risk scoring.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12 Reflection -->
+    <section class="cs-section cs-section-alt">
+        <div class="wrap">
+            <div class="cs-section-head rv">
+                <span class="sec-label">12</span>
+                <h2 class="sec-title">Reflection</h2>
+            </div>
+            <p class="cs-body rv">DocVault was my most complex design challenge to date - a real product, real stakeholders, real business goals.</p>
+            <div class="cs-learnings rv">
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>Designing for enterprise is designing for behaviour change</h3>
+                        <p>Enterprise users have deeply ingrained habits. DocVault had to feel familiar enough to adopt immediately but powerful enough to replace existing chaos. The Microsoft Fluent foundation was the right call.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>The landing page is a product, not a brochure</h3>
+                        <p>I treated the landing page as a conversion product - with a clear user journey, objection handling, and calls to action at every scroll depth. This mindset shift changed how I structured every section.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>Three users means three success metrics</h3>
+                        <p>I should have defined what success looks like for each user type before designing a single screen. Business users measure time-to-find. Compliance managers measure coverage. IT managers measure deployment time.</p>
+                    </div>
+                </div>
+                <div class="cs-learning">
+                    <span class="cs-learning-icon">✦</span>
+                    <div>
+                        <h3>What I'd do differently</h3>
+                        <p>I'd run at least 3 user interviews per user type before finalising the IA. Enterprise users have specific workflows that are hard to guess from the outside. Even informal conversations would have sharpened the design significantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="contact">
+        <div class="wrap">
+            <div class="contact-inner rv">
+                <h2>Want to work <span class="gradient-text">together?</span></h2>
+                <p>Let's discuss how I can help with your next project.</p>
+                <div class="contact-actions">
+                    <a href="mailto:jamaluiux04@gmail.com" class="btn-primary">Get in Touch</a>
+                    <a href="index.html" class="btn-secondary">View More Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-back-bottom rv">
+        <a href="index.html" class="cs-back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Home
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-inner">
+                <span class="footer-copy">&copy; 2026 Mohammed Jamal</span>
+                <span class="footer-note">Designed & built from scratch</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
