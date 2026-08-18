@@ -8,7 +8,7 @@
     <meta name="description" content="UX case study for DocVault AI - an AI-powered SharePoint Document Management System designed end to end, from marketing landing page to full application UI.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/case-study.css?v=3">
     <style>
@@ -233,6 +233,143 @@
         @media (max-width: 480px) {
             .dv-hero-device img { width: 180px; }
         }
+
+        /* ====================================
+           Editorial pass - flatten DocVault
+           components to match the site language
+           ==================================== */
+        .dv-flow-card,
+        .dv-landing-grid,
+        .dv-table-wrap { margin-left: 116px; }
+
+        .dv-flow-card {
+            background: none;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            border-radius: 0;
+            padding: 26px 0;
+            margin-bottom: 0;
+        }
+        .dv-flow-card:hover {
+            transform: none;
+            box-shadow: none;
+            background: none;
+            border-color: var(--border);
+        }
+        .dv-flow-card h3 {
+            font-family: var(--ff-display);
+            font-size: 1.25rem; font-weight: 400;
+            letter-spacing: -.01em; margin: 0 0 6px;
+        }
+        .dv-flow-type {
+            font-size: .625rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: .16em;
+            color: var(--gradient-1); margin-bottom: 16px;
+        }
+        [data-theme="dark"] .dv-flow-type { color: var(--gradient-1); }
+        .dv-flow-step {
+            font-size: .6875rem; color: var(--fg-2);
+            background: none; padding: 5px 12px;
+            border-radius: 100px; border: 1px solid var(--border);
+        }
+
+        .dv-landing-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            margin-top: 24px;
+        }
+        .dv-landing-card {
+            padding: 28px 24px;
+            border-radius: 0; border: none;
+            background: var(--bg);
+            transition: background-color .35s;
+        }
+        .cs-section-alt .dv-landing-card { background: var(--bg-2); }
+        .dv-landing-card:hover {
+            transform: none; box-shadow: none;
+            background: var(--surface);
+        }
+        .dv-landing-eyebrow {
+            font-size: .625rem; letter-spacing: .16em;
+            color: var(--gradient-1); margin-bottom: 10px;
+        }
+        [data-theme="dark"] .dv-landing-eyebrow { color: var(--gradient-1); }
+        .dv-landing-card h3 {
+            font-family: var(--ff-display);
+            font-size: 1.2rem; font-weight: 400;
+            letter-spacing: -.01em; margin: 0 0 10px;
+        }
+        .dv-landing-card p { font-size: .8125rem; line-height: 1.75; }
+
+        .dv-table th.cs-table-highlight {
+            background: transparent !important;
+            color: var(--gradient-1) !important;
+            border-bottom: 1px solid var(--gradient-1) !important;
+        }
+        [data-theme="dark"] .dv-table th.cs-table-highlight {
+            background: transparent !important;
+            color: var(--gradient-1) !important;
+            border-bottom: 1px solid var(--gradient-1) !important;
+        }
+        .dv-table td.cs-table-highlight,
+        [data-theme="dark"] .dv-table td.cs-table-highlight {
+            background: transparent !important;
+        }
+        .dv-table .cs-table-highlight .cell-status.yes,
+        [data-theme="dark"] .dv-table .cs-table-highlight .cell-status.yes {
+            background: var(--glow);
+            color: var(--gradient-1);
+            box-shadow: none;
+        }
+
+        .dv-screens-grid { background: var(--bg); margin-top: 44px; }
+        .dv-screen-item { background: transparent; padding: 44px 24px 32px; }
+        .dv-screen-item:hover { background-color: var(--bg-2); }
+        .dv-screen-placeholder {
+            background: var(--bg-2);
+            border-radius: 8px;
+        }
+        /* Full-page screenshots are tall - anchor the crop to the top so the
+           header and hero stay recognisable in the thumbnail */
+        .dv-screen-placeholder .card-uploaded-image { object-position: top; }
+        .dv-screen-placeholder:hover {
+            border-color: var(--border-strong);
+            box-shadow: none;
+        }
+        .dv-placeholder-icon,
+        [data-theme="dark"] .dv-placeholder-icon {
+            width: 40px; height: 40px; border-radius: 2px;
+            background: none; border: 1px solid var(--border);
+            color: var(--gradient-1);
+        }
+        .dv-placeholder-text {
+            letter-spacing: .16em; font-size: .625rem;
+        }
+        .dv-screen-title {
+            font-size: .625rem; letter-spacing: .16em;
+        }
+
+        .dv-hero-image-wrap { justify-content: flex-start; margin-top: 64px; gap: 0; }
+        /* 16:10 viewport crops - wider than the old 380px so the UI stays legible */
+        .dv-hero-device img {
+            width: clamp(300px, 38vw, 520px);
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 70px -25px rgba(0,0,0,.7);
+        }
+        @media (max-width: 768px) {
+            .dv-hero-device img { width: clamp(240px, 44vw, 320px); }
+        }
+
+        @media (max-width: 900px) {
+            .dv-flow-card, .dv-landing-grid, .dv-table-wrap { margin-left: 76px; }
+        }
+        @media (max-width: 768px) {
+            .dv-flow-card, .dv-landing-grid, .dv-table-wrap { margin-left: 0; }
+            .dv-hero-image-wrap { justify-content: center; }
+        }
     </style>
 </head>
 <body>
@@ -244,9 +381,9 @@
             </a>
             <div class="nav-links">
                 <a href="index.html#work">Work</a>
-                <a href="index.html#experience">Experience</a>
-                <a href="index.html#tools">Tools</a>
-                <a href="index.html#blog">Blog</a>
+                <a href="index.html#approach">Approach</a>
+                <a href="index.html#experience">Practice</a>
+                <a href="index.html#blog">Writing</a>
             </div>
             <div class="nav-right">
                 <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
@@ -262,24 +399,15 @@
     <!-- Mobile Menu -->
     <div class="mob-menu" id="mobMenu">
         <a href="index.html#work">Work</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="index.html#tools">Tools</a>
-        <a href="index.html#blog">Blog</a>
+        <a href="index.html#approach">Approach</a>
+        <a href="index.html#experience">Practice</a>
+        <a href="index.html#blog">Writing</a>
         <a href="mailto:jamaluiux04@gmail.com" class="mob-cta">Get in Touch</a>
     </div>
 
     <!-- Case Study Hero -->
     <section class="cs-hero">
-        <div class="hero-mesh-bg">
-            <div class="mesh-gradient-wrapper">
-                <div class="mesh-blob blob-1"></div>
-                <div class="mesh-blob blob-2"></div>
-                <div class="mesh-blob blob-3"></div>
-                <div class="mesh-blob blob-4"></div>
-                <div class="mesh-blob blob-5"></div>
-            </div>
-            <div class="mesh-overlay"></div>
-        </div>
+        <div class="hero-mesh-bg"></div>
         <div class="wrap">
             <a href="index.html" class="cs-back rv">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -291,7 +419,7 @@
                 <span>Solo Designer</span>
             </div>
             <h1 class="cs-hero-title rv">DocVault AI</h1>
-            <p class="cs-hero-subtitle rv">An AI-powered SharePoint Document Management System designed from scratch — end to end, from marketing landing page to full application UI.</p>
+            <p class="cs-hero-subtitle rv">An AI-powered SharePoint Document Management System designed from scratch, end to end, from marketing landing page to full application UI.</p>
             <div class="cs-hero-stats rv">
                 <div class="h-stat">
                     <span class="h-stat-num">1-3</span>
@@ -314,10 +442,10 @@
             <!-- Hero Device Showcase -->
             <div class="dv-hero-image-wrap rv">
                 <div class="dv-hero-device left">
-                    <img src="assets/docvault/docvault_hero_1.png" alt="DocVault AI Landing Page">
+                    <img src="assets/docvault/docvault_hero_1.png" alt="DocVault AI dashboard, blue hero treatment">
                 </div>
                 <div class="dv-hero-device right">
-                    <img src="assets/docvault/docvault_hero_2.png" alt="DocVault AI Dashboard">
+                    <img src="assets/docvault/docvault_hero_2.png" alt="DocVault AI dashboard, dark hero treatment">
                 </div>
             </div>
         </div>
@@ -402,7 +530,7 @@
             </div>
             <p class="cs-body rv">DocVault was designed for four distinct user types within an enterprise organisation. Each has different needs, pain points, and success metrics.</p>
             <div class="cs-persona-grid rv">
-                <!-- Card 1 — Business Users (light) -->
+                <!-- Card 1 - Business Users (light) -->
                 <div class="cs-persona-card">
                     <div class="cs-persona-header">
                         <div class="cs-persona-avatar">BU</div>
@@ -431,7 +559,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Card 2 — Compliance Managers (dark) -->
+                <!-- Card 2 - Compliance Managers (dark) -->
                 <div class="cs-persona-card cs-persona-dark">
                     <div class="cs-persona-header">
                         <div class="cs-persona-avatar">CM</div>
@@ -460,7 +588,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Card 3 — IT Managers (light) -->
+                <!-- Card 3 - IT Managers (light) -->
                 <div class="cs-persona-card">
                     <div class="cs-persona-header">
                         <div class="cs-persona-avatar">IT</div>
@@ -489,7 +617,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Card 4 — Employees (dark) -->
+                <!-- Card 4 - Employees (dark) -->
                 <div class="cs-persona-card cs-persona-dark">
                     <div class="cs-persona-header">
                         <div class="cs-persona-avatar">EM</div>
@@ -632,7 +760,7 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <h3>Designing for 4 Different Users</h3>
-                    <p>Business users, compliance managers, IT managers, and everyday employees all have completely different mental models and daily workflows. One UI had to serve all four without confusing any of them. Solution: role-based dashboard views and contextual navigation that surfaces the right tools and information for each user type — employees see documents relevant to their team, managers see compliance alerts, IT sees system health.</p>
+                    <p>Business users, compliance managers, IT managers, and everyday employees all have completely different mental models and daily workflows. One UI had to serve all four without confusing any of them. Solution: role-based dashboard views and contextual navigation that surfaces the right tools and information for each user type. Employees see documents relevant to their team, managers see compliance alerts, IT sees system health.</p>
                 </div>
                 <div class="cs-problem-card">
                     <div class="cs-problem-icon">
@@ -851,11 +979,11 @@
                     <div class="dv-screen-meta"><h3 class="dv-screen-title">Landing Page Features</h3></div>
                 </div>
                 <div class="dv-screen-item">
-                    <div class="dv-screen-placeholder">
-                        <div class="dv-placeholder-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    <div class="dv-screen-placeholder has-image">
+                        <img class="card-uploaded-image" src="assets/docvault/docvault_dashboard_home.png" alt="DocVault AI dashboard home" style="display:block">
+                        <div class="card-hover-overlay">
+                            <span>View full screen</span>
                         </div>
-                        <p class="dv-placeholder-text">Add Figma Export</p>
                     </div>
                     <div class="dv-screen-meta"><h3 class="dv-screen-title">Dashboard Home</h3></div>
                 </div>
