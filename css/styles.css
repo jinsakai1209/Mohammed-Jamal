@@ -841,3 +841,86 @@ footer {
     .available-dot { animation: none; }
     * { transition-duration: .01ms !important; }
 }
+
+/* ========================================
+   Cinematic intro (homepage only)
+   Gated behind .js-intro so the overlay can never
+   trap the page when JS is unavailable.
+   ======================================== */
+.intro { display: none; }
+.js-intro .intro {
+    display: block;
+    position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+}
+.intro-half {
+    position: absolute; left: 0; width: 100%; height: 50.5%;
+    background: var(--bg);
+    transition: transform 1.1s cubic-bezier(.76, 0, .24, 1);
+}
+.intro-half.top { top: 0; }
+.intro-half.bot { bottom: 0; }
+.intro.open .intro-half.top { transform: translateY(-100%); }
+.intro.open .intro-half.bot { transform: translateY(100%); }
+
+.intro-core {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity .4s ease, transform .8s cubic-bezier(.76, 0, .24, 1);
+}
+.intro.open .intro-core { opacity: 0; transform: scale(1.3); }
+.intro-w {
+    font-family: var(--ff-display);
+    font-size: clamp(2.5rem, 9vw, 7rem);
+    font-weight: var(--fw-display);
+    letter-spacing: -.02em; color: var(--fg);
+}
+.intro-w.is-clear { color: var(--accent); font-style: italic; }
+
+.intro-meta {
+    position: absolute; left: var(--pad); bottom: 26px;
+    display: flex; align-items: baseline; gap: 14px;
+    font-size: .6875rem; font-weight: 600;
+    letter-spacing: .2em; text-transform: uppercase;
+    color: var(--fg-3);
+    transition: opacity .3s;
+}
+.intro.open .intro-meta { opacity: 0; }
+.intro-bar { position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: var(--border); }
+.intro-bar i { display: block; height: 100%; width: 0; background: var(--accent); }
+.intro.open .intro-bar { opacity: 0; transition: opacity .3s; }
+.intro.done { display: none; }
+
+/* Headline masks up once the curtain opens */
+.hero-h.kt { opacity: 1; transform: none; }
+/* Extra room inside the clip box so Newsreader's descenders (g, p, y)
+   aren't sheared off by overflow:hidden; negative margin restores rhythm. */
+.kt-line { display: block; overflow: hidden; padding-bottom: .20em; margin-bottom: -.16em; }
+.js-intro .kt-line > span { display: block; transform: translateY(115%); }
+.revealed .kt-line > span { animation: ktUp 1.15s cubic-bezier(.16, 1, .3, 1) forwards; }
+.revealed .kt-line:nth-child(1) > span { animation-delay: .10s; }
+.revealed .kt-line:nth-child(2) > span { animation-delay: .24s; }
+.revealed .kt-line:nth-child(3) > span { animation-delay: .38s; }
+@keyframes ktUp { to { transform: translateY(0); } }
+
+.js-intro .hero-top,
+.js-intro .hero-byline,
+.js-intro .hero-p,
+.js-intro .hero-actions { opacity: 0; transform: translateY(16px); }
+.revealed .hero-top,
+.revealed .hero-byline,
+.revealed .hero-p,
+.revealed .hero-actions { animation: ktFade .9s var(--ease) forwards; }
+.revealed .hero-top     { animation-delay: .28s; }
+.revealed .hero-byline  { animation-delay: .88s; }
+.revealed .hero-p       { animation-delay: 1.0s; }
+.revealed .hero-actions { animation-delay: 1.12s; }
+@keyframes ktFade { to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+    .js-intro .intro { display: none; }
+    .js-intro .kt-line > span,
+    .js-intro .hero-top, .js-intro .hero-byline,
+    .js-intro .hero-p, .js-intro .hero-actions {
+        animation: none !important; opacity: 1 !important; transform: none !important;
+    }
+}

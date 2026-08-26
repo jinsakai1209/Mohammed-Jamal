@@ -10,8 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script>document.documentElement.classList.add('js-intro')</script>
 </head>
 <body>
+    <!-- Cinematic intro -->
+    <div class="intro" id="intro" aria-hidden="true">
+        <div class="intro-half top"></div>
+        <div class="intro-half bot"></div>
+        <div class="intro-core">
+            <span class="intro-w" id="introW">complex</span>
+        </div>
+        <div class="intro-meta"><span id="introN">000</span><span>Mohammed Jamal</span></div>
+        <div class="intro-bar"><i id="introBar"></i></div>
+    </div>
     <!-- Nav -->
     <nav>
         <div class="nav-inner">
@@ -48,31 +59,31 @@
     <section class="hero" id="hero">
         <div class="hero-mesh-bg"></div>
         <div class="wrap">
-            <div class="hero-top rv">
+            <div class="hero-top">
                 <span class="available-badge">
                     <span class="available-dot"></span> Available for new work
                 </span>
                 <span class="hero-locale">Chennai, India</span>
             </div>
 
-            <h1 class="hero-h rv">
-                I turn complex<br>
-                enterprise tools into<br>
-                things people <span class="serif-em">actually use</span><span class="hero-dot">.</span>
+            <h1 class="hero-h kt">
+                <span class="kt-line"><span>I turn complex</span></span>
+                <span class="kt-line"><span>enterprise tools into</span></span>
+                <span class="kt-line"><span>things people <em class="serif-em">actually use</em><span class="hero-dot">.</span></span></span>
             </h1>
 
-            <div class="hero-byline rv">
+            <div class="hero-byline">
                 <span class="hero-name">Mohammed Jamal</span>
                 <span class="hero-role">UI/UX Designer &middot; Enterprise intranets &amp; product design</span>
             </div>
 
-            <p class="hero-p rv">
+            <p class="hero-p">
                 Four years spent inside the software nobody puts on a portfolio: the
                 intranets, the dashboards, the forms people open every single morning.
                 This is how I make them worth opening.
             </p>
 
-            <div class="hero-actions rv">
+            <div class="hero-actions">
                 <a href="#work" class="btn-primary">Read the work</a>
                 <a href="assets/MohammedJamal_Resume.pdf" download class="btn-secondary">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>

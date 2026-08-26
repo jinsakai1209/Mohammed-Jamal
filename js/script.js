@@ -1,6 +1,51 @@
 (() => {
     'use strict';
 
+    // Cinematic intro (homepage only)
+    const intro = document.getElementById('intro');
+    if (intro) {
+        const reveal = () => {
+            if (intro.classList.contains('open')) return;
+            intro.classList.add('open');
+            document.body.classList.add('revealed');
+            setTimeout(() => intro.classList.add('done'), 1250);
+            try { sessionStorage.setItem('intro-seen', '1'); } catch (e) {}
+        };
+
+        let seen = false;
+        try { seen = sessionStorage.getItem('intro-seen') === '1'; } catch (e) {}
+        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (seen || reduced) {
+            // Returning within the session, or motion is unwelcome: skip straight in.
+            intro.classList.add('done');
+            document.body.classList.add('revealed');
+        } else {
+            const nEl = document.getElementById('introN');
+            const wEl = document.getElementById('introW');
+            const bar = document.getElementById('introBar');
+            const dur = 1300;
+            const t0 = performance.now();
+
+            const tick = now => {
+                const p = Math.min((now - t0) / dur, 1);
+                const e = 1 - Math.pow(1 - p, 3);
+                nEl.textContent = String(Math.round(e * 100)).padStart(3, '0');
+                bar.style.width = (e * 100) + '%';
+                if (p > 0.55 && !wEl.classList.contains('is-clear')) {
+                    wEl.textContent = 'clear';
+                    wEl.classList.add('is-clear');
+                }
+                if (p < 1) requestAnimationFrame(tick); else reveal();
+            };
+            requestAnimationFrame(tick);
+
+            // The overlay covers the whole page, so never let a throttled
+            // animation frame (background tab, low power) strand the visitor.
+            setTimeout(reveal, 3000);
+        }
+    }
+
     // Theme
     const root = document.documentElement;
     const btn = document.getElementById('themeBtn');
