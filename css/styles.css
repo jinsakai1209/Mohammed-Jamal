@@ -9,6 +9,17 @@
     --max-w: 1100px;
     --pad: 28px;
 
+    /* ---- Design knobs: change here, propagates everywhere ---- */
+    --h1-size: clamp(2rem, 5.3vw, 4.25rem);      /* hero headline */
+    --h1-leading: 1.03;
+    --sec-title-size: clamp(1.9rem, 3.6vw, 3rem);/* section headings */
+    --lede-size: clamp(1.5rem, 2.8vw, 2.15rem);  /* premise pull-quote */
+    --body-size: clamp(1rem, 1.35vw, 1.125rem);  /* hero paragraph */
+    --hero-video-opacity: 1;
+    --hero-video-sat: 1;
+    --hero-scrim: 1;                              /* 0 = none, 1 = full */
+    --byline-rule: 420px;                         /* width of the rule above the byline */
+
     /* Editorial rhythm */
     --sec-y: 120px;
     --rule-w: 1px;
@@ -240,7 +251,10 @@ nav.nav-collapsed .nav-logo-mark { font-size: 1.3rem; }
     -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 10%, transparent 78%);
     opacity: .55;
 }
-.hero .wrap { position: relative; z-index: 2; }
+.hero .wrap { position: relative; z-index: 2; width: 100%; }
+/* Full-screen stage so the video reads as the frame and nothing falls
+   below the fold; content stays vertically centred. */
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 110px 0 96px; }
 
 .hero-top {
     display: flex; align-items: center; gap: 18px;
@@ -274,9 +288,9 @@ nav.nav-collapsed .nav-logo-mark { font-size: 1.3rem; }
 
 .hero-h {
     font-family: var(--ff-display);
-    font-size: clamp(2.15rem, 7.2vw, 5.75rem);
+    font-size: var(--h1-size);
     font-weight: var(--fw-display);
-    line-height: 1.03;
+    line-height: var(--h1-leading);
     letter-spacing: -.02em;
     max-width: 15ch;
     margin-bottom: 40px;
@@ -289,7 +303,7 @@ nav.nav-collapsed .nav-logo-mark { font-size: 1.3rem; }
     flex-wrap: wrap;
     padding-top: 26px; margin-bottom: 26px;
     border-top: 1px solid var(--border);
-    max-width: 760px;
+    max-width: var(--byline-rule, 420px);
 }
 .hero-name {
     font-size: .9375rem; font-weight: 600; letter-spacing: -.01em;
@@ -299,7 +313,7 @@ nav.nav-collapsed .nav-logo-mark { font-size: 1.3rem; }
 }
 
 .hero-p {
-    font-size: clamp(1rem, 1.35vw, 1.125rem);
+    font-size: var(--body-size);
     color: var(--fg-2);
     line-height: 1.75;
     max-width: 54ch;
@@ -374,7 +388,7 @@ section { position: relative; }
 }
 .sec-title {
     font-family: var(--ff-display);
-    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    font-size: var(--sec-title-size);
     font-weight: var(--fw-display); letter-spacing: -.015em; line-height: 1.1;
 }
 .sec-intro {
@@ -419,7 +433,7 @@ section { position: relative; }
 }
 .premise-body p.premise-lede {
     font-family: var(--ff-display);
-    font-size: clamp(1.5rem, 2.8vw, 2.15rem);
+    font-size: var(--lede-size);
     font-weight: var(--fw-display); line-height: 1.32; letter-spacing: -.01em;
     color: var(--fg);
     margin-bottom: 32px;
@@ -843,84 +857,87 @@ footer {
 }
 
 /* ========================================
-   Cinematic intro (homepage only)
-   Gated behind .js-intro so the overlay can never
-   trap the page when JS is unavailable.
+   Hero video background (mouse-scrub)
+   Contained to .hero rather than position:fixed - several sections below
+   are transparent, so a fixed layer would bleed through the whole page.
    ======================================== */
-.intro { display: none; }
-.js-intro .intro {
-    display: block;
-    position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 110px 0 96px; }
+.hero-media {
+    position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+    /* poster set inline in the HTML: a url() inside a custom property would
+       resolve against this stylesheet's folder, not the document */
+    background-size: cover; background-position: 70% center;
 }
-.intro-half {
-    position: absolute; left: 0; width: 100%; height: 50.5%;
-    background: var(--bg);
-    transition: transform 1.1s cubic-bezier(.76, 0, .24, 1);
-}
-.intro-half.top { top: 0; }
-.intro-half.bot { bottom: 0; }
-.intro.open .intro-half.top { transform: translateY(-100%); }
-.intro.open .intro-half.bot { transform: translateY(100%); }
-
-.intro-core {
+.hero-video {
     position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: opacity .4s ease, transform .8s cubic-bezier(.76, 0, .24, 1);
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 70% center;
+    opacity: var(--hero-video-opacity, 1);
+    filter: saturate(var(--hero-video-sat, 1));
 }
-.intro.open .intro-core { opacity: 0; transform: scale(1.3); }
-.intro-w {
-    font-family: var(--ff-display);
-    font-size: clamp(2.5rem, 9vw, 7rem);
-    font-weight: var(--fw-display);
-    letter-spacing: -.02em; color: var(--fg);
-}
-.intro-w.is-clear { color: var(--accent); font-style: italic; }
 
-.intro-meta {
-    position: absolute; left: var(--pad); bottom: 26px;
-    display: flex; align-items: baseline; gap: 14px;
-    font-size: .6875rem; font-weight: 600;
+/* Scrim holds text contrast steady whatever frame is on screen */
+.hero-scrim {
+    position: absolute; inset: 0;
+    background:
+        linear-gradient(90deg,
+            rgba(0,0,0,calc(.88 * var(--hero-scrim))) 0%,
+            rgba(0,0,0,calc(.66 * var(--hero-scrim))) 34%,
+            rgba(0,0,0,calc(.22 * var(--hero-scrim))) 62%,
+            transparent 84%),
+        linear-gradient(to top, var(--bg) 0%, rgba(0,0,0,0) 32%);
+}
+.hero .wrap { position: relative; z-index: 2; width: 100%; }
+
+/* Type sits on footage, so it is light in both themes */
+.hero-h, .hero-name { color: #fff; }
+.hero-p, .hero-role { color: rgba(255,255,255,.84); }
+.hero-locale { color: rgba(255,255,255,.7); border-left-color: rgba(255,255,255,.25); }
+.available-badge { color: rgba(255,255,255,.78); }
+.hero-byline { border-top-color: rgba(255,255,255,.2); }
+.btn-secondary { color: #fff; border-color: rgba(255,255,255,.45); }
+.btn-secondary:hover { color: #fff; border-color: #fff; }
+
+/* Typewriter cursor */
+.tw-cursor {
+    display: inline-block; width: 2px; height: 1.1em;
+    background: #fff; vertical-align: middle; margin-left: 2px;
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Actions fade up shortly after load, independent of typing */
+.hero-actions.tw-pending { opacity: 0; transform: translateY(8px); }
+.hero-actions.tw-in {
+    opacity: 1; transform: translateY(0);
+    transition: opacity .4s ease, transform .4s ease;
+}
+
+/* Scrub hint */
+.hero-hint {
+    position: absolute; left: max(var(--pad), calc(50vw - var(--max-w)/2 + var(--pad)));
+    bottom: 30px; z-index: 2;
+    font-size: .625rem; font-weight: 600;
     letter-spacing: .2em; text-transform: uppercase;
-    color: var(--fg-3);
-    transition: opacity .3s;
+    color: rgba(255,255,255,.55);
+    display: flex; align-items: center; gap: 10px;
 }
-.intro.open .intro-meta { opacity: 0; }
-.intro-bar { position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: var(--border); }
-.intro-bar i { display: block; height: 100%; width: 0; background: var(--accent); }
-.intro.open .intro-bar { opacity: 0; transition: opacity .3s; }
-.intro.done { display: none; }
+.hero-hint::before { content: ''; width: 26px; height: 1px; background: rgba(255,255,255,.4); }
+.hero-media.scrub-live ~ .hero-hint { opacity: .55; }
 
-/* Headline masks up once the curtain opens */
-.hero-h.kt { opacity: 1; transform: none; }
-/* Extra room inside the clip box so Newsreader's descenders (g, p, y)
-   aren't sheared off by overflow:hidden; negative margin restores rhythm. */
-.kt-line { display: block; overflow: hidden; padding-bottom: .20em; margin-bottom: -.16em; }
-.js-intro .kt-line > span { display: block; transform: translateY(115%); }
-.revealed .kt-line > span { animation: ktUp 1.15s cubic-bezier(.16, 1, .3, 1) forwards; }
-.revealed .kt-line:nth-child(1) > span { animation-delay: .10s; }
-.revealed .kt-line:nth-child(2) > span { animation-delay: .24s; }
-.revealed .kt-line:nth-child(3) > span { animation-delay: .38s; }
-@keyframes ktUp { to { transform: translateY(0); } }
-
-.js-intro .hero-top,
-.js-intro .hero-byline,
-.js-intro .hero-p,
-.js-intro .hero-actions { opacity: 0; transform: translateY(16px); }
-.revealed .hero-top,
-.revealed .hero-byline,
-.revealed .hero-p,
-.revealed .hero-actions { animation: ktFade .9s var(--ease) forwards; }
-.revealed .hero-top     { animation-delay: .28s; }
-.revealed .hero-byline  { animation-delay: .88s; }
-.revealed .hero-p       { animation-delay: 1.0s; }
-.revealed .hero-actions { animation-delay: 1.12s; }
-@keyframes ktFade { to { opacity: 1; transform: none; } }
-
-@media (prefers-reduced-motion: reduce) {
-    .js-intro .intro { display: none; }
-    .js-intro .kt-line > span,
-    .js-intro .hero-top, .js-intro .hero-byline,
-    .js-intro .hero-p, .js-intro .hero-actions {
-        animation: none !important; opacity: 1 !important; transform: none !important;
+@media (max-width: 768px) {
+    /* No pointer to scrub with: show a still frame, never fetch the video */
+    .hero-video { display: none; }
+    .hero-media { background-position: 62% center; }
+    .hero-scrim {
+        background: linear-gradient(to bottom, rgba(0,0,0,.5) 0%, rgba(0,0,0,.68) 45%, var(--bg) 100%);
     }
+    .hero-hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    /* The video is kept: it never plays by itself, it only follows the user's
+       own cursor. Only the self-running animations are suppressed. */
+    .tw-cursor { animation: none; }
+    .hero-hint { display: none; }
 }

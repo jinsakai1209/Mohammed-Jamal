@@ -1,49 +1,88 @@
 (() => {
     'use strict';
 
-    // Cinematic intro (homepage only)
-    const intro = document.getElementById('intro');
-    if (intro) {
-        const reveal = () => {
-            if (intro.classList.contains('open')) return;
-            intro.classList.add('open');
-            document.body.classList.add('revealed');
-            setTimeout(() => intro.classList.add('done'), 1250);
-            try { sessionStorage.setItem('intro-seen', '1'); } catch (e) {}
+    // ---- Hero: mouse-scrub video + typewriter ----
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const narrow = matchMedia('(max-width: 768px)').matches;
+
+    // Scrub the hero video with horizontal cursor movement.
+    //
+    // Deliberately NOT gated on pointer/reduced-motion media queries: those are
+    // proxies that misreport (a touchscreen laptop claims pointer:coarse; Windows
+    // with animation effects off reports reduced-motion) and silently killed the
+    // whole interaction. Instead we wait for a real mousemove with real movement,
+    // which is direct proof a pointer exists. The motion here is entirely
+    // user-driven - nothing moves on its own - so it stays reduced-motion safe.
+    const hv = document.getElementById('heroVideo');
+    if (hv && !narrow) {
+        const SENSITIVITY = 0.8;
+        let prevX = null, targetTime = 0, easedTime = 0, live = false, raf = 0;
+
+        const start = () => {
+            if (raf) return;
+            live = true;
+            document.querySelector('.hero-media')?.classList.add('scrub-live');
+            const tick = () => {
+                if (hv.duration) {
+                    easedTime += (targetTime - easedTime) * 0.18;
+                    if (!hv.seeking && Math.abs(easedTime - hv.currentTime) > 0.008) {
+                        try { hv.currentTime = easedTime; } catch (e) { /* not seekable yet */ }
+                    }
+                }
+                raf = requestAnimationFrame(tick);
+            };
+            raf = requestAnimationFrame(tick);
         };
 
-        let seen = false;
-        try { seen = sessionStorage.getItem('intro-seen') === '1'; } catch (e) {}
-        const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.addEventListener('mousemove', e => {
+            if (prevX === null) { prevX = e.clientX; return; }
+            const delta = e.clientX - prevX;
+            prevX = e.clientX;
+            if (!delta) return;
+            if (!live) {                      // first real movement proves a pointer
+                easedTime = targetTime = hv.currentTime || 0;
+                start();
+            }
+            if (!hv.duration) return;
+            targetTime += (delta / window.innerWidth) * SENSITIVITY * hv.duration;
+            targetTime = Math.max(0, Math.min(hv.duration, targetTime));
+        }, { passive: true });
+    }
 
-        if (seen || reduced) {
-            // Returning within the session, or motion is unwelcome: skip straight in.
-            intro.classList.add('done');
-            document.body.classList.add('revealed');
+    // Type the hero paragraph out, with a blinking cursor while it runs.
+    const typeEl = document.getElementById('heroType');
+    if (typeEl) {
+        const full = typeEl.textContent.replace(/\s+/g, ' ').trim();
+        if (reducedMotion) {
+            typeEl.textContent = full;
         } else {
-            const nEl = document.getElementById('introN');
-            const wEl = document.getElementById('introW');
-            const bar = document.getElementById('introBar');
-            const dur = 1300;
-            const t0 = performance.now();
-
-            const tick = now => {
-                const p = Math.min((now - t0) / dur, 1);
-                const e = 1 - Math.pow(1 - p, 3);
-                nEl.textContent = String(Math.round(e * 100)).padStart(3, '0');
-                bar.style.width = (e * 100) + '%';
-                if (p > 0.55 && !wEl.classList.contains('is-clear')) {
-                    wEl.textContent = 'clear';
-                    wEl.classList.add('is-clear');
-                }
-                if (p < 1) requestAnimationFrame(tick); else reveal();
-            };
-            requestAnimationFrame(tick);
-
-            // The overlay covers the whole page, so never let a throttled
-            // animation frame (background tab, low power) strand the visitor.
-            setTimeout(reveal, 3000);
+            const SPEED = 22, START_DELAY = 600;
+            typeEl.textContent = '';
+            const cursor = document.createElement('span');
+            cursor.className = 'tw-cursor';
+            const textNode = document.createTextNode('');
+            typeEl.append(textNode, cursor);
+            // Reserve the final height so the buttons below never jump.
+            typeEl.style.minHeight = '54px';
+            let i = 0;
+            setTimeout(() => {
+                const id = setInterval(() => {
+                    textNode.data = full.slice(0, ++i);
+                    if (i >= full.length) { clearInterval(id); cursor.remove(); }
+                }, SPEED);
+            }, START_DELAY);
         }
+    }
+
+    // Actions fade up on their own timer, not gated on the typing finishing.
+    const actions = document.querySelector('.hero-actions');
+    if (actions && !reducedMotion) {
+        actions.classList.remove('rv');
+        actions.classList.add('tw-pending');
+        setTimeout(() => {
+            actions.classList.add('tw-in');
+            actions.classList.remove('tw-pending');
+        }, 400);
     }
 
     // Theme
