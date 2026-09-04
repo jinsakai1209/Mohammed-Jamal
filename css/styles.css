@@ -46,6 +46,7 @@
     --gradient-2: var(--accent);
     --glow: rgba(232, 115, 74, .14);
     --glow-2: rgba(232, 115, 74, .08);
+    --bg-a0: rgba(11, 11, 12, 0);
     --nav-bg: rgba(11, 11, 12, .72);
     --pill-bg: rgba(239, 237, 232, .05);
     --pill-border: rgba(239, 237, 232, .09);
@@ -73,6 +74,7 @@
     --gradient-2: var(--accent);
     --glow: rgba(180, 69, 31, .1);
     --glow-2: rgba(180, 69, 31, .05);
+    --bg-a0: rgba(251, 250, 247, 0);
     --nav-bg: rgba(251, 250, 247, .78);
     --pill-bg: rgba(22, 21, 15, .04);
     --pill-border: rgba(22, 21, 15, .08);
@@ -230,7 +232,6 @@ nav.nav-collapsed .nav-logo-mark { font-size: 1.3rem; }
     position: relative;
     overflow: hidden;
     padding: 200px 0 100px;
-    border-bottom: 1px solid var(--border);
 }
 .hero-mesh-bg {
     position: absolute; inset: 0; z-index: 0; pointer-events: none;
@@ -881,12 +882,18 @@ footer {
 .hero-scrim {
     position: absolute; inset: 0;
     background:
+        /* Dissolve to the page colour over the last ~380px. Listed first so it
+           paints above the side scrim - otherwise the .88 black wash below sat
+           on top and drove the left edge darker than the section beneath. */
+        linear-gradient(to top,
+            var(--bg) 0%,
+            var(--bg) 5%,
+            var(--bg-a0) 42%),
         linear-gradient(90deg,
             rgba(0,0,0,calc(.88 * var(--hero-scrim))) 0%,
             rgba(0,0,0,calc(.66 * var(--hero-scrim))) 34%,
             rgba(0,0,0,calc(.22 * var(--hero-scrim))) 62%,
-            transparent 84%),
-        linear-gradient(to top, var(--bg) 0%, rgba(0,0,0,0) 32%);
+            transparent 84%);
 }
 .hero .wrap { position: relative; z-index: 2; width: 100%; }
 
