@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-04T00:00:00.000Z",
+  "title": "Design System: Mohammed Jamal Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "signal-vermilion": {
+        "role": "primary",
+        "displayName": "Signal Vermilion",
+        "canonical": "#E8734A",
+        "tonalRamp": ["#2A0F06", "#4A1B0C", "#6B2A14", "#8C3B1E", "#B4451F", "#D25E36", "#E8734A", "#F4A98C"]
+      },
+      "signal-vermilion-deep": {
+        "role": "primary",
+        "displayName": "Signal Vermilion (Paper)",
+        "canonical": "#B4451F",
+        "tonalRamp": ["#240D05", "#3E170A", "#5C220F", "#7C2F15", "#9A3A1A", "#B4451F", "#CF6A44", "#E9A98C"]
+      },
+      "nutridash-green": {
+        "role": "secondary",
+        "displayName": "NutriDash Green",
+        "canonical": "#34D399",
+        "tonalRamp": ["#052E20", "#064E36", "#08694A", "#0B8560", "#10A176", "#1CBD8C", "#34D399", "#8FE9C6"]
+      },
+      "docvault-blue": {
+        "role": "secondary",
+        "displayName": "DocVault Blue",
+        "canonical": "#60A5FA",
+        "tonalRamp": ["#0A1E3A", "#12315C", "#1A457E", "#2359A0", "#2E6DC2", "#4489E4", "#60A5FA", "#A9CCFD"]
+      },
+      "fuelbuddy-orange": {
+        "role": "secondary",
+        "displayName": "Fuel Buddy Orange",
+        "canonical": "#FB923C",
+        "tonalRamp": ["#3A1B04", "#5C2C07", "#7E3D0B", "#A04F10", "#C26216", "#E4781F", "#FB923C", "#FDC38C"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0B0B0C",
+        "tonalRamp": ["#0B0B0C", "#101012", "#131315", "#191A1C", "#2A2A2D", "#4A4A4E", "#7B7770", "#A29F98"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#FBFAF7",
+        "tonalRamp": ["#16150F", "#3A3830", "#63605A", "#78746C", "#A5A199", "#E4E1DA", "#F4F2ED", "#FBFAF7"]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "#EFEDE8",
+        "tonalRamp": ["#1A1A18", "#2E2D2A", "#46443F", "#63605A", "#7B7770", "#A29F98", "#CFCCC5", "#EFEDE8"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero thesis. One per page. Its emphasis phrase is serif italic in the accent." },
+      "headline": { "displayName": "Headline", "purpose": "Chapter titles and case study section headings." },
+      "title": { "displayName": "Title", "purpose": "Pull-quotes and case study standfirsts. Serif because it is display type doing an argument's work." },
+      "body": { "displayName": "Body", "purpose": "All reading text, measured 40ch to 68ch, never full-bleed." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows, chapter numbers, meta, tags and button text. Uppercase at 0.18em." }
+    },
+    "shadows": [
+      { "name": "object-cast", "value": "0 30px 70px -25px rgba(0,0,0,.65)", "purpose": "Device mockups and lightbox imagery only. Never a UI surface." },
+      { "name": "focus-halo", "value": "0 0 0 3px rgba(74,222,128,.15)", "purpose": "The availability status dot. The only ring in the system." }
+    ],
+    "motion": [
+      { "name": "ease-editorial", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The single easing curve. Fast out, long settle. Used for every transition and reveal." },
+      { "name": "reveal", "value": "opacity .8s, transform .8s", "purpose": "Scroll-triggered section reveal, 20px rise." },
+      { "name": "word-rise", "value": "opacity .55s, transform .55s, filter .55s", "purpose": "Hero paragraph words fading up out of a 4px blur, staggered 32ms apart." },
+      { "name": "stagger-step", "value": "90ms", "purpose": "Delay between siblings in an index-style list." }
+    ],
+    "breakpoints": [
+      { "name": "lg", "value": "900px" },
+      { "name": "md", "value": "768px" },
+      { "name": "sm", "value": "560px" },
+      { "name": "xs", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single call to action. Its resting fill is the text colour; the accent appears only on hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Read the work</a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:10px; padding:14px 28px; border-radius:2px; font-family:Inter,system-ui,sans-serif; font-size:.8125rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; text-decoration:none; background:var(--fg,#EFEDE8); color:var(--bg,#0B0B0C); transition:background-color .3s, color .3s, transform .3s cubic-bezier(.16,1,.3,1); } .ds-btn-primary:hover { background:var(--accent,#E8734A); color:#fff; transform:translateY(-2px); } .ds-btn-primary:focus-visible { outline:2px solid var(--accent,#E8734A); outline-offset:3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Transparent with a hairline. Never fills, at any state.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg>Resume</a>",
+      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; gap:10px; padding:14px 28px; border-radius:2px; font-family:Inter,system-ui,sans-serif; font-size:.8125rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; text-decoration:none; background:transparent; border:1px solid var(--border-strong,rgba(239,237,232,.22)); color:var(--fg,#EFEDE8); transition:border-color .3s, color .3s, transform .3s cubic-bezier(.16,1,.3,1); } .ds-btn-secondary:hover { border-color:var(--accent,#E8734A); color:var(--accent,#E8734A); transform:translateY(-2px); } .ds-btn-secondary:focus-visible { outline:2px solid var(--accent,#E8734A); outline-offset:3px; }"
+    },
+    {
+      "name": "Taxonomy Chip",
+      "kind": "chip",
+      "refersTo": "chip-pill",
+      "description": "A label, not a control. Pill shaped, transparent, hairline bordered. No selected state.",
+      "html": "<span class=\"ds-chip\">Design Systems</span>",
+      "css": ".ds-chip { display:inline-block; font-family:Inter,system-ui,sans-serif; font-size:.6875rem; font-weight:500; letter-spacing:.04em; padding:6px 14px; border-radius:100px; border:1px solid var(--border,rgba(239,237,232,.10)); color:var(--fg-2,#A29F98); transition:border-color .3s, color .3s; } .ds-chip:hover { border-color:var(--accent-line,rgba(232,115,74,.45)); color:var(--fg,#EFEDE8); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Muted sans with an accent underline that wipes in from the left and stays for the active section.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">Work</a>",
+      "css": ".ds-nav-link { position:relative; display:inline-block; padding:4px 0; font-family:Inter,system-ui,sans-serif; font-size:.8125rem; font-weight:500; text-decoration:none; color:var(--fg-2,#A29F98); transition:color .25s; } .ds-nav-link::after { content:''; position:absolute; left:0; bottom:0; width:100%; height:1px; background:var(--accent,#E8734A); transform:scaleX(0); transform-origin:right; transition:transform .35s cubic-bezier(.16,1,.3,1); } .ds-nav-link:hover { color:var(--fg,#EFEDE8); } .ds-nav-link:hover::after { transform:scaleX(1); transform-origin:left; }"
+    },
+    {
+      "name": "Chapter Head",
+      "kind": "custom",
+      "description": "The organising device of the whole site: an 88px number gutter, then the content column at 116px. Every block in the chapter aligns to that edge.",
+      "html": "<div class=\"ds-chapter\"><span class=\"ds-chapter-num\">02</span><div><span class=\"ds-chapter-label\">Selected Work</span><h2 class=\"ds-chapter-title\">Three problems, told properly.</h2></div></div>",
+      "css": ".ds-chapter { display:grid; grid-template-columns:88px 1fr; gap:0 28px; align-items:start; padding-top:26px; border-top:1px solid var(--border,rgba(239,237,232,.10)); } .ds-chapter-num { font-family:Newsreader,Georgia,serif; font-size:1rem; font-weight:500; letter-spacing:.04em; color:var(--accent,#E8734A); padding-top:.35em; } .ds-chapter-label { display:block; font-family:Inter,system-ui,sans-serif; font-size:.6875rem; font-weight:600; text-transform:uppercase; letter-spacing:.18em; color:var(--fg-2,#A29F98); margin-bottom:14px; } .ds-chapter-title { font-family:Newsreader,Georgia,serif; font-size:clamp(1.9rem,3.6vw,3rem); font-weight:500; letter-spacing:-.015em; line-height:1.1; margin:0; color:var(--fg,#EFEDE8); }"
+    },
+    {
+      "name": "Work Index Row",
+      "kind": "card",
+      "description": "The signature component. A ruled row per project with a grayscale thumbnail that regains colour on hover. A table of contents that happens to be interactive.",
+      "html": "<a class=\"ds-work-row\" href=\"#\"><span class=\"ds-work-num\">01</span><div class=\"ds-work-body\"><h3>NutriDash</h3><p>People order food they cannot see the contents of.</p><div class=\"ds-work-tags\"><span>UI/UX</span><span>Mobile App</span></div></div><div class=\"ds-work-thumb\"></div><div class=\"ds-work-arrow\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><line x1=\"7\" y1=\"17\" x2=\"17\" y2=\"7\"/><polyline points=\"7 7 17 7 17 17\"/></svg></div></a>",
+      "css": ".ds-work-row { display:grid; grid-template-columns:88px 1fr 250px 40px; gap:0 28px; align-items:center; padding:34px 0; border-bottom:1px solid var(--border,rgba(239,237,232,.10)); text-decoration:none; color:inherit; transition:padding .45s cubic-bezier(.16,1,.3,1); } .ds-work-row:hover { padding-left:12px; padding-right:12px; } .ds-work-num { font-family:Newsreader,Georgia,serif; font-size:1rem; color:var(--accent,#E8734A); align-self:start; padding-top:6px; } .ds-work-body h3 { font-family:Newsreader,Georgia,serif; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:500; letter-spacing:-.015em; line-height:1.12; margin:0 0 10px; transition:color .3s; } .ds-work-row:hover .ds-work-body h3 { color:var(--accent,#E8734A); } .ds-work-body p { font-family:Inter,system-ui,sans-serif; font-size:.875rem; line-height:1.7; color:var(--fg-2,#A29F98); margin:0 0 16px; } .ds-work-tags { display:flex; gap:18px; } .ds-work-tags span { font-family:Inter,system-ui,sans-serif; font-size:.625rem; font-weight:600; text-transform:uppercase; letter-spacing:.14em; color:var(--fg-3,#7B7770); } .ds-work-thumb { aspect-ratio:16/10; background:linear-gradient(135deg,#2a2a2d,#3a3a3f); border:1px solid var(--border,rgba(239,237,232,.10)); filter:grayscale(1) contrast(.95); opacity:.75; transition:filter .5s cubic-bezier(.16,1,.3,1), opacity .5s, transform .5s; } .ds-work-row:hover .ds-work-thumb { filter:grayscale(0); opacity:1; transform:scale(1.03); } .ds-work-arrow { display:flex; justify-content:flex-end; color:var(--fg-3,#7B7770); transition:color .3s, transform .4s cubic-bezier(.16,1,.3,1); } .ds-work-row:hover .ds-work-arrow { color:var(--accent,#E8734A); transform:translate(4px,-4px); }"
+    },
+    {
+      "name": "Stat Column",
+      "kind": "custom",
+      "description": "Hairline-divided numeric proof. Serif figures over a sans caption, ruled rather than boxed.",
+      "html": "<div class=\"ds-stats\"><div class=\"ds-stat\"><span class=\"ds-stat-num\">50+</span><span class=\"ds-stat-label\">Intranet portals shipped to real teams</span></div><div class=\"ds-stat\"><span class=\"ds-stat-num\">4+</span><span class=\"ds-stat-label\">Years designing enterprise products</span></div></div>",
+      "css": ".ds-stats { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--border,rgba(239,237,232,.10)); } .ds-stat { padding:28px 28px 0 0; border-right:1px solid var(--border,rgba(239,237,232,.10)); } .ds-stat:last-child { border-right:none; padding-left:28px; } .ds-stat-num { display:block; font-family:Newsreader,Georgia,serif; font-size:clamp(2.25rem,4.5vw,3.25rem); font-weight:500; line-height:1; letter-spacing:-.02em; color:var(--fg,#EFEDE8); margin-bottom:12px; } .ds-stat-label { display:block; font-family:Inter,system-ui,sans-serif; font-size:.75rem; line-height:1.5; color:var(--fg-2,#A29F98); max-width:22ch; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Printed Broadsheet",
+    "overview": "This system behaves like a serious newspaper feature rather than a web app. Content is set in numbered chapters with standfirsts and pull-quotes; structure is drawn with hairline rules rather than boxes; a serif carries every headline while a neutral sans carries every word meant to be read at length. The reader is assumed to be literate and in a hurry, which is the broadsheet's own assumption.\n\nThe density is generous and the palette is nearly monochrome. Depth is achieved by ruling and tonal shift, not by lifting things off the page, because paper has no z-axis. One warm accent appears rarely enough that its appearance is information. Both themes are real rather than an inversion: near-black ink and warm off-white paper, each with its own accent value tuned for contrast on that ground.\n\nThe confirmed anti-reference is the system this replaced: purple-to-blue gradients, rounded card grids, drop shadows on every surface, and a display face whose hairline strokes read as decorative rather than typeset.",
+    "keyCharacteristics": [
+      "Serif display over sans body, never mixed within a role",
+      "Hairline rules instead of cards, borders instead of shadows",
+      "Near-zero corner radius; roundness reserved for pills and avatars",
+      "One accent, used sparingly, restated per project on case study pages",
+      "Numbered chapters as the primary organising device",
+      "Motion is triggered by the reader, never ambient"
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "The accent never exceeds roughly 10% of a viewport and never fills a resting surface. If it appears twice in one screen region, one of them is decoration and should be removed.", "section": "colors" },
+      { "name": "The Borrowed Colour Rule", "body": "A project accent belongs to its case study page and dies at that page's edge. Site chrome, the logo mark and nav, always stays Signal Vermilion, because the nav is the author's identity and not the project's.", "section": "colors" },
+      { "name": "The Two Voices Rule", "body": "Serif for anything asserting, sans for anything explaining. A heading never appears in Inter and running body text never appears in Newsreader. The one sanctioned exception is the case study standfirst, an assertion wearing a paragraph's shape.", "section": "typography" },
+      { "name": "The Weight Floor Rule", "body": "Display weight comes from --fw-display (500) and is never hard-coded per rule. Newsreader's 400 is a text weight and reads anaemic above 3rem.", "section": "typography" },
+      { "name": "The Shared Edge Rule", "body": "Everything within a chapter aligns to one left edge. A block that needs to sit outside it goes full-bleed on purpose rather than indenting differently.", "section": "layout" },
+      { "name": "The No-Lift Rule", "body": "A UI surface never leaves the page. Hover changes background or border, never elevation. If something must feel interactive, move it 2px or change its rule colour.", "section": "elevation" },
+      { "name": "The Radius Ladder Rule", "body": "Four values exist: 0, 2px, 100px, 50%. Anything else is either a mistake or an image's own corner.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do set every heading in Newsreader at weight 500 through --fw-display.",
+      "Do structure a new section as a numbered chapter with an 88px number gutter and content on the 116px edge.",
+      "Do build separation from 1px rules and the bg / bg-2 tonal pair.",
+      "Do keep the accent under roughly 10% of any viewport and let its rarity mean something.",
+      "Do give every animation a prefers-reduced-motion path that lands on the finished state.",
+      "Do cap reading measure between 40ch and 68ch.",
+      "Do scope a project accent to its own case study page and leave site chrome alone."
+    ],
+    "donts": [
+      "Don't put a drop shadow on a UI surface. Depth comes from rules and tone.",
+      "Don't introduce a corner radius outside 0, 2px, 100px, 50%.",
+      "Don't set body copy in the serif or a heading in Inter.",
+      "Don't use a gradient as a surface fill. The one gradient in the system is the hero scrim and its job is legibility.",
+      "Don't take a border above 1px; raise its opacity instead.",
+      "Don't loop an animation in the reader's peripheral vision. Motion is triggered by scroll, hover or the cursor, and then it stops.",
+      "Don't reintroduce em dashes into body copy; the voice uses colons, commas and full stops."
+    ]
+  }
+}
