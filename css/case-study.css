@@ -145,6 +145,17 @@
     font-size: clamp(1.9rem, 3.6vw, 2.85rem);
     font-weight: var(--fw-display); letter-spacing: -.015em; line-height: 1.1;
 }
+/* A worded label (Convergent, Feature Preferences) is far wider than the
+   88px number gutter, and was overflowing its cell into the title. Stack it
+   above the title in column two instead - the title keeps the same left
+   edge as every numbered section, so the rhythm is unchanged. */
+.cs-head-worded .sec-label {
+    grid-column: 2;
+    padding-top: 0;
+    margin-bottom: 10px;
+}
+.cs-head-worded .sec-title { grid-column: 2; }
+
 .cs-body {
     font-size: clamp(.9375rem, 1.2vw, 1.0625rem);
     color: var(--fg-2); line-height: 1.85;
@@ -910,6 +921,10 @@ th.cs-table-highlight {
     .cs-section { padding: 72px 0; }
     .cs-section-head { grid-template-columns: 1fr; gap: 0; margin-bottom: 32px; }
     .cs-section-head .sec-label { margin-bottom: 14px; padding-top: 0; }
+    /* the grid is single-column here, so a grid-column:2 would spawn an
+       implicit second column and push these out of the text edge */
+    .cs-head-worded .sec-label,
+    .cs-head-worded .sec-title { grid-column: 1; }
 
     .cs-body,
     .cs-meta-grid,
