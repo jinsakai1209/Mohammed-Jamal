@@ -899,17 +899,19 @@ footer {
 .btn-secondary { color: #fff; border-color: rgba(255,255,255,.45); }
 .btn-secondary:hover { color: #fff; border-color: #fff; }
 
-/* Typewriter cursor */
-.tw-cursor {
-    display: inline-block; width: 2px; height: 1.1em;
-    background: #fff; vertical-align: middle; margin-left: 2px;
-    animation: blink 1s step-end infinite;
+/* Hero paragraph reveals word by word */
+.word-rise {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(.5em);
+    filter: blur(4px);
+    transition: opacity .55s var(--ease), transform .55s var(--ease), filter .55s ease;
 }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.word-rise.is-in { opacity: 1; transform: none; filter: blur(0); }
 
 /* Actions fade up shortly after load, independent of typing */
-.hero-actions.tw-pending { opacity: 0; transform: translateY(8px); }
-.hero-actions.tw-in {
+.hero-actions.is-pending { opacity: 0; transform: translateY(8px); }
+.hero-actions.is-in {
     opacity: 1; transform: translateY(0);
     transition: opacity .4s ease, transform .4s ease;
 }
@@ -938,6 +940,6 @@ footer {
 @media (prefers-reduced-motion: reduce) {
     /* The video is kept: it never plays by itself, it only follows the user's
        own cursor. Only the self-running animations are suppressed. */
-    .tw-cursor { animation: none; }
+    .word-rise { transition: none; opacity: 1; transform: none; filter: none; }
     .hero-hint { display: none; }
 }

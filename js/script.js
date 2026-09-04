@@ -49,28 +49,28 @@
         }, { passive: true });
     }
 
-    // Type the hero paragraph out, with a blinking cursor while it runs.
+    // Reveal the hero paragraph word by word: each word fades up out of a
+    // slight blur. Words are laid out immediately (just invisible), so unlike
+    // a typewriter there is no reflow and no waiting to read.
     const typeEl = document.getElementById('heroType');
     if (typeEl) {
-        const full = typeEl.textContent.replace(/\s+/g, ' ').trim();
+        const words = typeEl.textContent.trim().split(/\s+/);
         if (reducedMotion) {
-            typeEl.textContent = full;
+            typeEl.textContent = words.join(' ');
         } else {
-            const SPEED = 22, START_DELAY = 600;
             typeEl.textContent = '';
-            const cursor = document.createElement('span');
-            cursor.className = 'tw-cursor';
-            const textNode = document.createTextNode('');
-            typeEl.append(textNode, cursor);
-            // Reserve the final height so the buttons below never jump.
-            typeEl.style.minHeight = '54px';
-            let i = 0;
-            setTimeout(() => {
-                const id = setInterval(() => {
-                    textNode.data = full.slice(0, ++i);
-                    if (i >= full.length) { clearInterval(id); cursor.remove(); }
-                }, SPEED);
-            }, START_DELAY);
+            words.forEach(w => {
+                const span = document.createElement('span');
+                span.className = 'word-rise';
+                span.textContent = w;
+                // real space between spans keeps the text selectable and readable
+                typeEl.append(span, document.createTextNode(' '));
+            });
+            requestAnimationFrame(() => {
+                typeEl.querySelectorAll('.word-rise').forEach((span, i) => {
+                    setTimeout(() => span.classList.add('is-in'), 300 + i * 32);
+                });
+            });
         }
     }
 
@@ -78,10 +78,10 @@
     const actions = document.querySelector('.hero-actions');
     if (actions && !reducedMotion) {
         actions.classList.remove('rv');
-        actions.classList.add('tw-pending');
+        actions.classList.add('is-pending');
         setTimeout(() => {
-            actions.classList.add('tw-in');
-            actions.classList.remove('tw-pending');
+            actions.classList.add('is-in');
+            actions.classList.remove('is-pending');
         }, 400);
     }
 
