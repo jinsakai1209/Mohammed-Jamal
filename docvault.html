@@ -129,72 +129,6 @@
             font-size: .8rem; color: var(--fg-2); line-height: 1.65; margin: 0;
         }
 
-        /* Desktop screen placeholders (wider than phone) */
-        .dv-screens-grid {
-            display: grid;
-            /* single screen for now - the rest of the set is not exported yet */
-            grid-template-columns: 1fr;
-            max-width: 720px;
-            border-top: 1px solid var(--border);
-            border-left: 1px solid var(--border);
-            margin-top: 40px;
-            background: var(--bg);
-        }
-        .dv-screen-item {
-            border-right: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            background: var(--bg-2);
-            display: flex; flex-direction: column;
-            align-items: center;
-            padding: 40px 24px 30px; gap: 20px;
-            transition: background-color 0.3s var(--ease);
-        }
-        .dv-screen-item:hover { background-color: var(--surface); }
-        .dv-screen-placeholder {
-            width: 100%; max-width: 640px;
-            aspect-ratio: 16 / 10;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            position: relative; cursor: pointer;
-            overflow: hidden;
-            transition: border-color 0.3s, background-color 0.3s;
-        }
-        .dv-screen-placeholder:hover {
-            border-color: var(--card-hover-border);
-            box-shadow: var(--card-hover-shadow);
-        }
-        .dv-screen-placeholder .card-uploaded-image {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover; z-index: 2;
-            pointer-events: none;
-        }
-        .dv-screen-placeholder.has-image:hover .card-hover-overlay { opacity: 1; }
-        .dv-placeholder-icon {
-            width: 44px; height: 44px; border-radius: 10px;
-            background: rgba(37, 99, 235, 0.08);
-            border: 1px solid var(--border);
-            display: flex; align-items: center; justify-content: center;
-            color: #2563EB; margin-bottom: 8px;
-        }
-        [data-theme="dark"] .dv-placeholder-icon {
-            background: rgba(96, 165, 250, 0.08);
-            color: #60A5FA;
-        }
-        .dv-placeholder-text {
-            font-size: .6rem; color: var(--fg-3); margin: 0;
-            text-transform: uppercase; letter-spacing: .06em;
-        }
-        .dv-screen-meta { text-align: center; pointer-events: none; }
-        .dv-screen-title {
-            font-size: .68rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: .08em;
-            color: var(--fg); margin: 0;
-        }
-
         /* Hero image (desktop mockup - wider) */
         .dv-hero-image-wrap {
             display: flex; justify-content: center; align-items: center;
@@ -228,7 +162,6 @@
 
         @media (max-width: 768px) {
             .dv-landing-grid { grid-template-columns: 1fr; }
-            .dv-screens-grid { grid-template-columns: 1fr; }
             .dv-hero-device img { width: 260px; }
             .dv-hero-image-wrap { gap: 12px; }
         }
@@ -319,41 +252,21 @@
         [data-theme="dark"] .dv-table td.cs-table-highlight {
             background: transparent !important;
         }
-        .dv-table .cs-table-highlight .cell-status.yes,
+        /* Keep the DocVault column on its own blue - var(--glow) is the
+           site accent and was painting these circles orange */
+        .dv-table .cs-table-highlight .cell-status.yes {
+            background: rgba(37, 99, 235, 0.15);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            color: #2563EB;
+            border-radius: 50%;
+            box-shadow: none;
+        }
         [data-theme="dark"] .dv-table .cs-table-highlight .cell-status.yes {
-            background: var(--glow);
-            color: var(--gradient-1);
-            box-shadow: none;
+            background: rgba(96, 165, 250, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            color: #60A5FA;
         }
 
-        .dv-screens-grid { background: var(--bg); margin-top: 44px; }
-        .dv-screen-item { background: transparent; padding: 44px 24px 32px; }
-        .dv-screen-item:hover { background-color: var(--bg-2); }
-        .dv-screen-placeholder {
-            background: var(--bg-2);
-            border-radius: 8px;
-        }
-        /* Full-page screenshots are tall - anchor the crop to the top so the
-           header and hero stay recognisable in the thumbnail */
-        .dv-screen-placeholder .card-uploaded-image { object-position: top; }
-        .dv-screen-placeholder:hover {
-            border-color: var(--border-strong);
-            box-shadow: none;
-        }
-        .dv-placeholder-icon,
-        [data-theme="dark"] .dv-placeholder-icon {
-            width: 40px; height: 40px; border-radius: 2px;
-            background: none; border: 1px solid var(--border);
-            color: var(--gradient-1);
-        }
-        .dv-placeholder-text {
-            letter-spacing: .16em; font-size: .625rem;
-        }
-        .dv-screen-title {
-            font-size: .625rem; letter-spacing: .16em;
-        }
-
-        .dv-hero-image-wrap { justify-content: flex-start; margin-top: 64px; gap: 0; }
         /* 16:10 viewport crops - wider than the old 380px so the UI stays legible */
         .dv-hero-device img {
             width: clamp(300px, 38vw, 520px);
@@ -953,33 +866,11 @@
         </div>
     </section>
 
-    <!-- 09 UI Screens -->
-    <section class="cs-section">
-        <div class="wrap">
-            <div class="cs-section-head rv">
-                <span class="sec-label">09</span>
-                <h2 class="sec-title">UI Screens</h2>
-            </div>
-            <p class="cs-body rv">High-fidelity screens designed in Figma for both the marketing landing page and the SharePoint application. The dashboard home is shown here; more of the set to follow.</p>
-            <div class="dv-screens-grid rv">
-                <div class="dv-screen-item">
-                    <div class="dv-screen-placeholder has-image">
-                        <img class="card-uploaded-image" src="assets/docvault/docvault_dashboard_home.png" alt="DocVault AI dashboard home" style="display:block">
-                        <div class="card-hover-overlay">
-                            <span>View full screen</span>
-                        </div>
-                    </div>
-                    <div class="dv-screen-meta"><h3 class="dv-screen-title">Dashboard Home</h3></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 10 Design Decisions -->
+    <!-- 09 Design Decisions -->
     <section class="cs-section cs-section-alt">
         <div class="wrap">
             <div class="cs-section-head rv">
-                <span class="sec-label">10</span>
+                <span class="sec-label">09</span>
                 <h2 class="sec-title">Key Design Decisions</h2>
             </div>
             <p class="cs-body rv">These decisions were intentional and grounded in user behaviour and enterprise UX principles.</p>
@@ -1009,11 +900,11 @@
         </div>
     </section>
 
-    <!-- 11 Future Scope -->
+    <!-- 10 Future Scope -->
     <section class="cs-section">
         <div class="wrap">
             <div class="cs-section-head rv">
-                <span class="sec-label">11</span>
+                <span class="sec-label">10</span>
                 <h2 class="sec-title">Future Scope</h2>
             </div>
             <p class="cs-body rv">With a growing user base, these next-phase features would deepen DocVault's product value and expand into new market segments.</p>
@@ -1050,11 +941,11 @@
         </div>
     </section>
 
-    <!-- 12 Reflection -->
+    <!-- 11 Reflection -->
     <section class="cs-section cs-section-alt">
         <div class="wrap">
             <div class="cs-section-head rv">
-                <span class="sec-label">12</span>
+                <span class="sec-label">11</span>
                 <h2 class="sec-title">Reflection</h2>
             </div>
             <p class="cs-body rv">DocVault was my most complex design challenge to date - a real product, real stakeholders, real business goals.</p>
@@ -1128,34 +1019,5 @@
 
     <script src="js/script.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const lightbox = document.getElementById('lightbox');
-            if (lightbox) {
-                const lightboxImg = document.getElementById('lightbox-img');
-                const lightboxClose = lightbox.querySelector('.lightbox-close');
-
-                document.querySelectorAll('.dv-screen-placeholder.has-image').forEach(card => {
-                    card.addEventListener('click', () => {
-                        const img = card.querySelector('.card-uploaded-image');
-                        if (img && img.src) {
-                            lightboxImg.src = img.src;
-                            lightbox.classList.add('active');
-                            document.body.style.overflow = 'hidden';
-                        }
-                    });
-                });
-
-                const closeLightbox = () => {
-                    lightbox.classList.remove('active');
-                    document.body.style.overflow = '';
-                };
-
-                if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-                lightbox.addEventListener('click', closeLightbox);
-                if (lightboxImg) lightboxImg.addEventListener('click', (e) => e.stopPropagation());
-            }
-        });
-    </script>
 </body>
 </html>
