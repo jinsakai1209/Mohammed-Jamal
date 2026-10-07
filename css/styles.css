@@ -723,7 +723,8 @@ section { position: relative; }
     gap: 28px;
 }
 .photo-item {
-    aspect-ratio: 1 / 1;
+    /* Instagram's portrait post ratio, so the frames crop as little as possible */
+    aspect-ratio: 4 / 5;
     overflow: hidden;
     background: var(--bg-2);
     border: 1px solid var(--border);
