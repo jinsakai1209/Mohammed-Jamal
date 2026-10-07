@@ -4,6 +4,7 @@ skills-lock.json
 .claude/
 .codex/
 .impeccable/config.local.json
+.impeccable/live/
 
 # Local scratch / preview files
 _t_*.html
